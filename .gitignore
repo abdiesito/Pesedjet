@@ -1,0 +1,58 @@
+# ==============================================================================
+# .gitignore para proyectos .NET (JetBrains Rider / Visual Studio)
+# ==============================================================================
+
+# Carpetas de compilación
+[Bb]in/
+[Oo]bj/
+[Oo]ut/
+
+# Archivos específicos de usuario y entorno local
+*.user
+*.userosscache
+*.sln.docstates
+*.suo
+*.userprefs
+
+# JetBrains Rider / ReSharper
+.idea/
+*.sln.iml
+_ReSharper*/
+*.[Rr]e[Ss]harper
+*.DotSettings.user
+
+# Archivos ignorados por defecto en Rider (Configuración local del proyecto)
+/shelf/
+/workspace.xml
+/httpRequests/
+/modules.xml
+/contentModel.xml
+/projectSettingsUpdater.xml
+/.idea.Pesedjet.iml
+/queries/
+/dataSources/
+/dataSources.local.xml
+
+# Mac OS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Logs y bases de datos locales
+*.log
+*.mdf
+*.ldf
+*.ndf
+*.sqlite
+*.sqlite3
+
+# Archivos de configuración con secretos (¡NUNCA SUBIR CREDENCIALES!)
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+
+# Herramientas de pruebas
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.coverage
+*.coveragexml

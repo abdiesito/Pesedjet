@@ -1,0 +1,52 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:loc="using:Pesedjet.Client.Services"
+        xmlns:vm="using:Pesedjet.Client.ViewModels"
+        x:DataType="vm:SettingsViewModel"
+        x:CompileBindings="False"
+        x:Class="Pesedjet.Client.Views.SettingsWindow"
+        Title="Settings"
+        Width="500" Height="350"
+        CanResize="False"
+        WindowStartupLocation="CenterOwner"
+        SystemDecorations="None"
+        >
+
+    <Grid RowDefinitions="Auto, Auto, *" Margin="20">
+        
+        <!-- Botón de Cerrar (X) -->
+        <Button Grid.Row="0" Content="✕" FontSize="20" Background="Transparent" 
+                HorizontalAlignment="Left" Cursor="Hand"
+                Click="CloseButtonClick" />
+
+        <!-- Título -->
+        <TextBlock Grid.Row="1" Text="{Binding [Settings.SectionMessage], Source={x:Static loc:LocalizationManager.Instance}}" 
+                   FontSize="24" FontWeight="Bold" Margin="20,10,0,10" />
+
+        <!-- Contenedor con borde para los ajustes -->
+        <Border Grid.Row="2" BorderBrush="Gray" BorderThickness="1" Padding="40,30">
+            <Grid RowDefinitions="Auto, Auto, Auto" ColumnDefinitions="150, Auto" >
+                
+                <!-- Idioma -->
+                <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" FontSize="16"
+                           Text="{Binding [Settings.Language], Source={x:Static loc:LocalizationManager.Instance}}" />
+                <ComboBox Grid.Row="0" Grid.Column="1" Width="150" SelectedIndex="{Binding SelectedLanguageIndex}">
+                    <ComboBoxItem Content="ESP (MX)" />
+                    <ComboBoxItem Content="ENG (US)" />
+                </ComboBox>
+
+                <!-- Sonido -->
+                <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" FontSize="16" Margin="0,30,0,0"
+                           Text="{Binding [Settings.Sound], Source={x:Static loc:LocalizationManager.Instance}}" />
+                <ToggleSwitch Grid.Row="1" Grid.Column="1" Margin="0,30,0,0"
+                              IsChecked="{Binding IsSoundEnabled}" OnContent="" OffContent="" />
+
+                <!-- Música -->
+                <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" FontSize="16" Margin="0,30,0,0"
+                           Text="{Binding [Settings.Music], Source={x:Static loc:LocalizationManager.Instance}}" />
+                <ToggleSwitch Grid.Row="2" Grid.Column="1" Margin="0,30,0,0"
+                              IsChecked="{Binding IsMusicEnabled}" OnContent="" OffContent="" />
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+    <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+        <xsd:element name="root" msdata:IsDataSet="true">
+            
+        </xsd:element>
+    </xsd:schema>
+    <resheader name="resmimetype">
+        <value>text/microsoft-resx</value>
+    </resheader>
+    <resheader name="version">
+        <value>1.3</value>
+    </resheader>
+    <resheader name="reader">
+        <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <resheader name="writer">
+        <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    </resheader>
+    <data name="AccessMenu.WelcomeMessage" xml:space="preserve">
+        <value>Bienvenido</value>
+    </data>
+    <data name="AccessMenu.Username" xml:space="preserve">
+        <value>Nombre de usuario</value>
+    </data>
+    <data name="AccessMenu.Password" xml:space="preserve">
+        <value>Contraseña</value>
+    </data>
+    <data name="AccessMenu.LogIn" xml:space="preserve">
+        <value>Iniciar Sesión</value>
+    </data>
+    <data name="AccessMenu.ForgottenPassword" xml:space="preserve">
+        <value>¿Olvidaste la contraseña?</value>
+    </data>
+    <data name="AccessMenu.NewAccountMessage" xml:space="preserve">
+        <value>¿No tienes una cuenta?</value>
+    </data>
+    <data name="AccessMenu.CreateAccount" xml:space="preserve">
+        <value>Crear una nueva cuenta ahora</value>
+    </data>
+    <data name="AccessMenu.PlayAsGuest" xml:space="preserve">
+        <value>Jugar como Invitado</value>
+    </data>
+    <data name="Menu.Title" xml:space="preserve">
+        <value>Pesedjet</value>
+    </data>
+    <data name="Menu.Subtitle" xml:space="preserve">
+        <value>La Guerra del Panteón</value>
+    </data>
+    <data name="Menu.FriendsRequest" xml:space="preserve">
+        <value>Solicitudes de amistad pendientes</value>
+    </data>
+    <data name="Menu.RoomInvitations" xml:space="preserve">
+        <value>Invitaciones a sala de juego</value>
+    </data>
+    <data name="Menu.Play" xml:space="preserve">
+        <value>Jugar</value>
+    </data>
+    <data name="Menu.Friends" xml:space="preserve">
+        <value>Amigos</value>
+    </data>
+    <data name="Menu.Leaderboard" xml:space="preserve">
+        <value>Marcador de puntuación</value>
+    </data>
+    <data name="Menu.Settings" xml:space="preserve">
+        <value>Ajustes</value>
+    </data>
+    <data name="Menu.LogOut" xml:space="preserve">
+        <value>Cerrar Sesión</value>
+    </data>
+    <data name="Menu.MyProfile" xml:space="preserve">
+        <value>Ver mi perfil</value>
+    </data>
+    <data name="Menu.GlossaryAndRulesMessage" xml:space="preserve">
+        <value>Glosario y Reglas de Juego</value>
+    </data>
+    <data name="Menu.MyLevel" xml:space="preserve">
+        <value>Nivel</value>
+    </data>
+    <data name="Menu.MyRank" xml:space="preserve">
+        <value>Rango</value>
+    </data>
+    <data name="Settings.SectionMessage" xml:space="preserve">
+        <value>Ajustes</value>
+    </data>
+    <data name="Settings.Language" xml:space="preserve">
+        <value>Idioma</value>
+    </data>
+    <data name="Settings.Sound" xml:space="preserve">
+        <value>Sonido</value>
+    </data>
+    <data name="Settings.Music" xml:space="preserve">
+        <value>Musica</value>
+    </data>
+    <data name="Match.CreateNew" xml:space="preserve">
+        <value>Crear nueva</value>
+    </data>
+    <data name="Match.Join" xml:space="preserve">
+        <value>Unirse</value>
+    </data>
+    <data name="Match.ConfigureTitle" xml:space="preserve">
+        <value>CONFIGURA TU PARTIDA:</value>
+    </data>
+    <data name="Match.Players" xml:space="preserve">
+        <value>Jugadores:</value>
+    </data>
+    <data name="Match.Type" xml:space="preserve">
+        <value>Tipo:</value>
+    </data>
+    <data name="Match.TypeNormal" xml:space="preserve">
+        <value>Normal</value>
+    </data>
+    <data name="Match.TypeFast" xml:space="preserve">
+        <value>Rápida</value>
+    </data>
+    <data name="Match.Privacy" xml:space="preserve">
+        <value>Privacidad del juego:</value>
+    </data>
+    <data name="Match.PrivacyPublic" xml:space="preserve">
+        <value>Pública</value>
+    </data>
+    <data name="Match.PrivacyPrivate" xml:space="preserve">
+        <value>Privada</value>
+    </data>
+    <data name="Match.Create" xml:space="preserve">
+        <value>Crear sala</value>
+    </data>
+</root>

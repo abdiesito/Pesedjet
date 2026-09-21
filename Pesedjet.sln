@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# 
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pesedjet.Server", "Pesedjet.Server\Pesedjet.Server.csproj", "{9C3BF446-D989-4D9C-8025-380E1DC7A9AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pesedjet.Contracts", "Pesedjet.Contracts\Pesedjet.Contracts.csproj", "{211612AA-7AF0-4D1B-81C5-0532A3CEB48C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pesedjet.Client", "Pesedjet.Client\Pesedjet.Client.csproj", "{22A46D53-8542-4FFC-902D-5A1447232A54}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9C3BF446-D989-4D9C-8025-380E1DC7A9AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C3BF446-D989-4D9C-8025-380E1DC7A9AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C3BF446-D989-4D9C-8025-380E1DC7A9AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C3BF446-D989-4D9C-8025-380E1DC7A9AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{211612AA-7AF0-4D1B-81C5-0532A3CEB48C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{211612AA-7AF0-4D1B-81C5-0532A3CEB48C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{211612AA-7AF0-4D1B-81C5-0532A3CEB48C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{211612AA-7AF0-4D1B-81C5-0532A3CEB48C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22A46D53-8542-4FFC-902D-5A1447232A54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22A46D53-8542-4FFC-902D-5A1447232A54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22A46D53-8542-4FFC-902D-5A1447232A54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22A46D53-8542-4FFC-902D-5A1447232A54}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

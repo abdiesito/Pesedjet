@@ -1,0 +1,53 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        xmlns:loc="using:Pesedjet.Client.Services"
+        x:Class="Pesedjet.Client.Views.AccessMenuView"
+        >
+
+    <Grid>
+        <!-- Contenedor centralizado como en el wireframe -->
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="20" Width="320">
+            
+            <!-- Etiqueta con saludo de Bienvenida -->
+            <TextBlock Text="{Binding [AccessMenu.WelcomeMessage], Source={x:Static loc:LocalizationManager.Instance}}" 
+                       FontSize="32" FontWeight="Bold" HorizontalAlignment="Center" />
+
+            <!-- Solicita el nombre de usuario -->
+            <StackPanel Spacing="5">
+                <TextBlock Text="{Binding [AccessMenu.Username], Source={x:Static loc:LocalizationManager.Instance}}" />
+                <TextBox Watermark="{Binding [AccessMenu.Username], Source={x:Static loc:LocalizationManager.Instance}}" />
+            </StackPanel>
+
+            <!-- Solicita la contraseña -->
+            <StackPanel Spacing="5">
+                <TextBlock Text="{Binding [AccessMenu.Password], Source={x:Static loc:LocalizationManager.Instance}}" />
+                <!-- PasswordChar asegura que la contraseña se oculte -->
+                <TextBox PasswordChar="*" />
+            </StackPanel>
+
+            <!-- Botón de inicio de sesión -->
+            <Button Content="{Binding [AccessMenu.LogIn], Source={x:Static loc:LocalizationManager.Instance}}" 
+                    HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Background="#007ACC" Foreground="White" />
+
+            <!-- Olvidaste la contraseña -->
+            <Button Content="{Binding [AccessMenu.ForgottenPassword], Source={x:Static loc:LocalizationManager.Instance}}" 
+                    HorizontalAlignment="Center" Background="Transparent" Foreground="DodgerBlue" Cursor="Hand" />
+
+            <!-- Crea una nueva cuenta (Etiqueta + Botón interactivo) -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="5">
+                <TextBlock Text="{Binding [AccessMenu.NewAccountMessage], Source={x:Static loc:LocalizationManager.Instance}}" 
+                           VerticalAlignment="Center" />
+                <Button Content="{Binding [AccessMenu.CreateAccount], Source={x:Static loc:LocalizationManager.Instance}}" 
+                        Background="Transparent" Foreground="DodgerBlue" Cursor="Hand" Padding="0"/>
+            </StackPanel>
+
+            <!-- Botón de Jugar como Invitado, con margen superior para separarlo del bloque de login -->
+            <Button Content="{Binding [AccessMenu.PlayAsGuest], Source={x:Static loc:LocalizationManager.Instance}}" 
+                    HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Margin="0,30,0,0"/>
+
+        </StackPanel>
+    </Grid>
+</UserControl>
