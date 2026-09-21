@@ -2,13 +2,13 @@
 
 Pesedjet es un juego de arquitectura Cliente-Servidor que utiliza comunicación TCP pura. Este repositorio (monorepo) contiene toda la solución estructurada en tres proyectos interdependientes para garantizar la sincronización del código entre ambas partes del sistema.
 
-## ➜ Arquitectura de la Solución
+## ✦ Arquitectura de la Solución
 
 *   **`Pesedjet.Server`:** Backend (.NET 8). Contiene las reglas de negocio, validaciones y acceso a la base de datos mediante Entity Framework Core.
 *   **`Pesedjet.Client`:** Frontend (Avalonia UI). Interfaz gráfica del usuario. No calcula reglas; solo renderiza, captura clics y maneja la internacionalización.
 *   **`Pesedjet.Contracts`:** Librería de clases (.NET 8). Contiene las interfaces WCF compartidas (`[ServiceContract]`) y los DTOs.
 
-## ➜ Stack Tecnológico
+## ✦ Stack Tecnológico
 
 *   **Framework:** .NET 8 LTS (Estrictamente C# 12).
 *   **UI:** Avalonia UI (v11.x).
@@ -18,7 +18,7 @@ Pesedjet es un juego de arquitectura Cliente-Servidor que utiliza comunicación 
 
 ---
 
-## ➜ Configuración del Entorno de Desarrollo
+## ✦ Configuración del Entorno de Desarrollo
 
 El proyecto está diseñado para funcionar de manera nativa tanto en macOS (ARM64) como en Windows. **Sigue las instrucciones correspondientes a tu sistema operativo.**
 
@@ -56,7 +56,7 @@ Para mantener la compatibilidad entre Windows y Mac y evitar horas de depuració
 
 ---
 
-## ▶️ Ejecución del Proyecto
+## ➤️ Ejecución del Proyecto
 
 1. Clona este repositorio y restaura la solución desde Rider.
 2. Ejecuta el comando de actualización de base de datos (`dotnet ef database update --project Pesedjet.Server`).
