@@ -126,4 +126,46 @@
     <data name="Match.Create" xml:space="preserve">
         <value>Crear sala</value>
     </data>
+    <data name="FriendsSection.AddedFriends" xml:space="preserve">
+    <value>Amistades añadidas</value>
+  </data>
+    <data name="FriendsSection.BlockedPlayers" xml:space="preserve">
+    <value>Jugadores bloqueados</value>
+  </data>
+    <data name="FriendsSection.NewFriend" xml:space="preserve">
+    <value>Añadir nuevo amigo</value>
+  </data>
+    <data name="FriendsListSection.FriendsListMessage" xml:space="preserve">
+    <value>Lista de amigos</value>
+  </data>
+    <data name="FriendsListSection.FriendProfile" xml:space="preserve">
+    <value>Ver perfil</value>
+  </data>
+    <data name="FriendsListSection.Block" xml:space="preserve">
+    <value>Bloquear</value>
+  </data>
+    <data name="FriendsListSection.EmptyList" xml:space="preserve">
+    <value>No tienes amigos agregados aún. Ve a la pestaña 'Añadir nuevo amigo' para buscar jugadores.</value>
+  </data>
+    <data name="BlockedPlayersSection.BlockedPlayersMessage" xml:space="preserve">
+    <value>Lista de jugadores bloqueados</value>
+  </data>
+    <data name="BlockedPlayersSection.Unblock" xml:space="preserve">
+    <value>Desbloquear</value>
+  </data>
+    <data name="NewFriend.NewFriendMessage" xml:space="preserve">
+    <value>Ingresa el nombre de usuario</value>
+  </data>
+    <data name="NewFriend.AddFriend" xml:space="preserve">
+    <value>Añadir nuevo amigo</value>
+  </data>
+    <data name="FriendsListSection.Remove" xml:space="preserve">
+    <value>Eliminar</value>
+  </data>
+    <data name="FriendsListSection.Accept" xml:space="preserve">
+    <value>Aceptar</value>
+  </data>
+    <data name="FriendsListSection.Reject" xml:space="preserve">
+    <value>Rechazar</value>
+  </data>
 </root>

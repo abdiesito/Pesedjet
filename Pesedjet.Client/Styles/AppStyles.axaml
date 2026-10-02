@@ -1,0 +1,194 @@
+﻿<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!-- ======================================================== -->
+    <!-- 1. TOKENS DE DISEÑO (Colores, Radios, Tamaños y Fuentes)  -->
+    <!-- ======================================================== -->
+    <Styles.Resources>
+        <!-- Tipografías (Google Fonts) -->
+        <FontFamily x:Key="FontTitleDisplay">avares://Pesedjet.Client/Assets/Fonts/AlfaSlabOne-Regular.ttf#Alfa Slab One</FontFamily>
+        <FontFamily x:Key="FontBody">avares://Pesedjet.Client/Assets/Fonts/Cairo-VariableFont_slnt,wght.ttf#Cairo</FontFamily>
+
+        <!-- Paleta Principal -->
+        <SolidColorBrush x:Key="ColorPrimary" Color="#0D233A"/>
+        <SolidColorBrush x:Key="ColorPrimaryHover" Color="#1A3A5E"/>
+        <SolidColorBrush x:Key="ColorPrimaryPressed" Color="#081625"/>
+
+        <!-- Fondos y Superficies -->
+        <SolidColorBrush x:Key="ColorBackground" Color="#F8F9FA"/>
+        <SolidColorBrush x:Key="ColorSurface" Color="#FFFFFF"/>
+
+        <!-- Bordes y Separadores -->
+        <SolidColorBrush x:Key="ColorBorder" Color="#E2E8F0"/>
+        <SolidColorBrush x:Key="ColorBorderFocus" Color="#CBD5E1"/>
+
+        <!-- Textos -->
+        <SolidColorBrush x:Key="ColorTextPrimary" Color="#0D233A"/>
+        <SolidColorBrush x:Key="ColorTextSecondary" Color="#64748B"/>
+        <SolidColorBrush x:Key="ColorTextMuted" Color="#94A3B8"/>
+        <SolidColorBrush x:Key="ColorTextLight" Color="#FFFFFF"/>
+
+        <!-- Estados / Acciones (Eliminar, Bloquear, Alertas) -->
+        <SolidColorBrush x:Key="ColorDangerBackground" Color="#FFF1F2"/>
+        <SolidColorBrush x:Key="ColorDangerBorder" Color="#FECDD3"/>
+        <SolidColorBrush x:Key="ColorDangerText" Color="#BE123C"/>
+        <SolidColorBrush x:Key="ColorSuccess" Color="#10B981"/>
+        <SolidColorBrush x:Key="ColorWarning" Color="#F59E0B"/>
+
+        <!-- Medidas y Radios Compartidos -->
+        <CornerRadius x:Key="RadiusCard">6</CornerRadius>
+        <CornerRadius x:Key="RadiusButton">4</CornerRadius>
+        <CornerRadius x:Key="RadiusSmall">3</CornerRadius>
+
+        <x:Double x:Key="FontSizeTitle">24</x:Double>
+        <x:Double x:Key="FontSizeSubtitle">18</x:Double>
+        <x:Double x:Key="FontSizeBody">14</x:Double>
+        <x:Double x:Key="FontSizeSmall">12</x:Double>
+    </Styles.Resources>
+
+    <!-- ======================================================== -->
+    <!-- 2. TIPOGRAFÍA BASE POR DEFECTO                            -->
+    <!-- ======================================================== -->
+    <Style Selector="TextBlock">
+        <Setter Property="FontFamily" Value="{DynamicResource FontBody}"/>
+    </Style>
+
+    <Style Selector="TextBox">
+        <Setter Property="FontFamily" Value="{DynamicResource FontBody}"/>
+    </Style>
+
+    <!-- ======================================================== -->
+    <!-- 3. TÍTULO DE MARCA / BRANDING (Alfa Slab One)             -->
+    <!-- ======================================================== -->
+    <Style Selector="TextBlock.brand-title">
+        <Setter Property="FontFamily" Value="{DynamicResource FontTitleDisplay}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ColorPrimary}"/>
+        <Setter Property="LetterSpacing" Value="1.5"/>
+    </Style>
+
+    <!-- ======================================================== -->
+    <!-- 4. REGLAS Y CLASES DE COMPONENTES REUTILIZABLES          -->
+    <!-- ======================================================== -->
+
+    <!-- Botón Primario (Azul Marino Sólido) -->
+    <Style Selector="Button.primary-btn">
+        <Setter Property="FontFamily" Value="{DynamicResource FontBody}"/>
+        <Setter Property="Background" Value="{DynamicResource ColorPrimary}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextLight}"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="CornerRadius" Value="{DynamicResource RadiusButton}"/>
+        <Setter Property="Padding" Value="14,9"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Cursor" Value="Hand"/>
+    </Style>
+    <Style Selector="Button.primary-btn:pointerover /template/ ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource ColorPrimaryHover}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextLight}"/>
+    </Style>
+
+    <!-- Botón Secundario / Outline -->
+    <Style Selector="Button.outline-btn">
+        <Setter Property="FontFamily" Value="{DynamicResource FontBody}"/>
+        <Setter Property="Background" Value="{DynamicResource ColorSurface}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextPrimary}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorBorderFocus}"/>
+        <Setter Property="BorderThickness" Value="1.5"/>
+        <Setter Property="FontWeight" Value="Medium"/>
+        <Setter Property="CornerRadius" Value="{DynamicResource RadiusButton}"/>
+        <Setter Property="Padding" Value="12,7"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Cursor" Value="Hand"/>
+    </Style>
+    <Style Selector="Button.outline-btn:pointerover /template/ ContentPresenter">
+        <Setter Property="Background" Value="#F1F5F9"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorTextSecondary}"/>
+    </Style>
+
+    <!-- Botón de Peligro Suave (Eliminar / Bloquear) -->
+    <Style Selector="Button.danger-btn">
+        <Setter Property="FontFamily" Value="{DynamicResource FontBody}"/>
+        <Setter Property="Background" Value="{DynamicResource ColorDangerBackground}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ColorDangerText}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorDangerBorder}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="CornerRadius" Value="{DynamicResource RadiusSmall}"/>
+        <Setter Property="Padding" Value="10,6"/>
+        <Setter Property="FontSize" Value="13"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Cursor" Value="Hand"/>
+    </Style>
+    <Style Selector="Button.danger-btn:pointerover /template/ ContentPresenter">
+        <Setter Property="Background" Value="#FFE4E6"/>
+    </Style>
+
+    <!-- Pestañas Superiores / Filtros (Segmented Tabs) -->
+    <Style Selector="RadioButton.tab-btn">
+        <Setter Property="FontFamily" Value="{DynamicResource FontBody}"/>
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextSecondary}"/>
+        <Setter Property="BorderThickness" Value="0,0,0,2"/>
+        <Setter Property="BorderBrush" Value="Transparent"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="FontSize" Value="15"/>
+        <Setter Property="Padding" Value="14,10"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        Background="{TemplateBinding Background}"
+                        Padding="{TemplateBinding Padding}">
+                    <ContentPresenter Content="{TemplateBinding Content}"
+                                      HorizontalAlignment="Center"
+                                      VerticalAlignment="Center"/>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+    <Style Selector="RadioButton.tab-btn:checked">
+        <Setter Property="Foreground" Value="{DynamicResource ColorPrimary}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorPrimary}"/>
+    </Style>
+
+    <!-- Selectores en forma de Píldora / Chips -->
+    <Style Selector="RadioButton.option-chip">
+        <Setter Property="FontFamily" Value="{DynamicResource FontBody}"/>
+        <Setter Property="Background" Value="{DynamicResource ColorSurface}"/>
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextPrimary}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorBorderFocus}"/>
+        <Setter Property="BorderThickness" Value="1.5"/>
+        <Setter Property="CornerRadius" Value="{DynamicResource RadiusButton}"/>
+        <Setter Property="FontWeight" Value="SemiBold"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Template">
+            <ControlTemplate>
+                <Border Name="ChipBorder"
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}"
+                        CornerRadius="{TemplateBinding CornerRadius}"
+                        Padding="{TemplateBinding Padding}">
+                    <ContentPresenter Content="{TemplateBinding Content}"
+                                      HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                      VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                </Border>
+            </ControlTemplate>
+        </Setter>
+    </Style>
+    <Style Selector="RadioButton.option-chip:checked /template/ Border#ChipBorder">
+        <Setter Property="Background" Value="{DynamicResource ColorPrimary}"/>
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorPrimary}"/>
+    </Style>
+    <Style Selector="RadioButton.option-chip:checked">
+        <Setter Property="Foreground" Value="{DynamicResource ColorTextLight}"/>
+    </Style>
+    <Style Selector="RadioButton.option-chip:pointerover /template/ Border#ChipBorder">
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorPrimary}"/>
+    </Style>
+    
+</Styles>

@@ -126,4 +126,46 @@
     <data name="Match.TypeNormal" xml:space="preserve">
         <value>Normal</value>
     </data>
+    <data name="FriendsSection.AddedFriends" xml:space="preserve">
+    <value>Added friends</value>
+  </data>
+    <data name="FriendsSection.BlockedPlayers" xml:space="preserve">
+    <value>Blocked players</value>
+  </data>
+    <data name="FriendsSection.NewFriend" xml:space="preserve">
+    <value>Add new friend</value>
+  </data>
+    <data name="FriendsListSection.FriendsListMessage" xml:space="preserve">
+    <value>Friends List</value>
+  </data>
+    <data name="FriendsListSection.FriendProfile" xml:space="preserve">
+    <value>See profile</value>
+  </data>
+    <data name="FriendsListSection.Block" xml:space="preserve">
+    <value>Block</value>
+  </data>
+    <data name="FriendsListSection.EmptyList" xml:space="preserve">
+    <value>You have no added friends yet. Go to the 'Add new friend' tab to search for players.</value>
+  </data>
+    <data name="BlockedPlayersSection.BlockedPlayersMessage" xml:space="preserve">
+    <value>Blocked players list</value>
+  </data>
+    <data name="BlockedPlayersSection.Unblock" xml:space="preserve">
+    <value>Unblock</value>
+  </data>
+    <data name="NewFriend.NewFriendMessage" xml:space="preserve">
+    <value>Enter the username</value>
+  </data>
+    <data name="NewFriend.AddFriend" xml:space="preserve">
+    <value>Add friend</value>
+  </data>
+    <data name="FriendsListSection.Remove" xml:space="preserve">
+    <value>Remove</value>
+  </data>
+    <data name="FriendsListSection.Accept" xml:space="preserve">
+    <value>Accept</value>
+  </data>
+    <data name="FriendsListSection.Reject" xml:space="preserve">
+    <value>Reject</value>
+  </data>
 </root>
