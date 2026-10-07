@@ -1,0 +1,158 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="700" d:DesignHeight="750"
+             xmlns:loc="using:Pesedjet.Client.Services"
+             xmlns:vm="using:Pesedjet.Client.ViewModels"
+             x:Class="Pesedjet.Client.Views.RegisterView"
+             x:DataType="vm:RegisterViewModel"
+             x:CompileBindings="False"
+             Background="{DynamicResource ColorBackground}">
+
+    <Design.DataContext>
+        <vm:RegisterViewModel/>
+    </Design.DataContext>
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+        <Border Background="{DynamicResource ColorSurface}"
+                BorderBrush="{DynamicResource ColorBorder}"
+                BorderThickness="1"
+                CornerRadius="{DynamicResource RadiusCard}"
+                Margin="40,25"
+                Padding="40,30"
+                MaxWidth="650"
+                HorizontalAlignment="Center">
+
+            <Grid RowDefinitions="Auto, Auto, *">
+
+                <!-- Header / Title -->
+                <TextBlock Grid.Row="0"
+                           Text="{Binding [Register.Title], Source={x:Static loc:LocalizationManager.Instance}}"
+                           Foreground="{DynamicResource ColorTextPrimary}"
+                           FontSize="{DynamicResource FontSizeTitle}"
+                           FontWeight="Bold"
+                           Margin="0,0,0,20"/>
+
+                <!-- Separator -->
+                <Border Grid.Row="1"
+                        Height="1"
+                        Background="{DynamicResource ColorBorder}"
+                        Margin="0,0,0,24"/>
+
+                <!-- Form Layout -->
+                <StackPanel Grid.Row="2" Spacing="18">
+
+                    <!-- Field 1: Full Name -->
+                    <StackPanel Spacing="6">
+                        <TextBlock Text="{Binding [Register.FullName], Source={x:Static loc:LocalizationManager.Instance}}"
+                                   Foreground="{DynamicResource ColorTextSecondary}"
+                                   FontSize="14"
+                                   FontWeight="Medium"/>
+                        <TextBox Height="42"
+                                 Text="{Binding FullName}"
+                                 Classes.input-error="{Binding IsFullNameInvalid}"/>
+                    </StackPanel>
+
+                    <!-- Field 2: Gametag (Username) -->
+                    <StackPanel Spacing="6">
+                        <TextBlock Text="{Binding [Register.Gametag], Source={x:Static loc:LocalizationManager.Instance}}"
+                                   Foreground="{DynamicResource ColorTextSecondary}"
+                                   FontSize="14"
+                                   FontWeight="Medium"/>
+                        <TextBox Height="42"
+                                 MaxLength="50"
+                                 Text="{Binding Gametag}"
+                                 Watermark="Ej. OsirisKing99"
+                                 Classes.input-error="{Binding IsGametagInvalid}"/>
+                    </StackPanel>
+
+                    <!-- Field 3: Birth Date -->
+                    <StackPanel Spacing="6">
+                        <TextBlock Text="{Binding [Register.BirthDate], Source={x:Static loc:LocalizationManager.Instance}}"
+                                   Foreground="{DynamicResource ColorTextSecondary}"
+                                   FontSize="14"
+                                   FontWeight="Medium"/>
+                        <DatePicker SelectedDate="{Binding BirthDate}"
+                                    MaxYear="{Binding MaximumAllowedBirthDate}"
+                                    HorizontalAlignment="Stretch"
+                                    Height="42"/>
+                    </StackPanel>
+
+                    <!-- Field 4: Email Address -->
+                    <StackPanel Spacing="6">
+                        <TextBlock Text="{Binding [Register.Email], Source={x:Static loc:LocalizationManager.Instance}}"
+                                   Foreground="{DynamicResource ColorTextSecondary}"
+                                   FontSize="14"
+                                   FontWeight="Medium"/>
+                        <TextBox Height="42"
+                                 Text="{Binding Email}"
+                                 Watermark="usuario@dominio.com"
+                                 Classes.input-error="{Binding IsEmailInvalid}"/>
+                    </StackPanel>
+
+                    <!-- Field 5 & 6: Password and Confirm Password -->
+                    <Grid ColumnDefinitions="*, 16, *">
+                        <StackPanel Grid.Column="0" Spacing="6">
+                            <TextBlock Text="{Binding [Register.Password], Source={x:Static loc:LocalizationManager.Instance}}"
+                                       Foreground="{DynamicResource ColorTextSecondary}"
+                                       FontSize="14"
+                                       FontWeight="Medium"/>
+                            <TextBox Height="42"
+                                     PasswordChar="●"
+                                     Text="{Binding Password}"
+                                     Classes.input-error="{Binding IsPasswordInvalid}"/>
+                        </StackPanel>
+
+                        <StackPanel Grid.Column="2" Spacing="6">
+                            <TextBlock Text="{Binding [Register.ConfirmPassword], Source={x:Static loc:LocalizationManager.Instance}}"
+                                       Foreground="{DynamicResource ColorTextSecondary}"
+                                       FontSize="14"
+                                       FontWeight="Medium"/>
+                            <TextBox Height="42"
+                                     PasswordChar="●"
+                                     Text="{Binding ConfirmPassword}"
+                                     Classes.input-error="{Binding IsConfirmPasswordInvalid}"/>
+                        </StackPanel>
+                    </Grid>
+
+                    <!-- Validation Error Feedback Banner -->
+                    <Border Background="#1AE04848"
+                            BorderBrush="{DynamicResource ColorDangerText}"
+                            BorderThickness="1"
+                            CornerRadius="{DynamicResource RadiusSmall}"
+                            Padding="12,10"
+                            Margin="0,6,0,0"
+                            IsVisible="{Binding HasError}">
+                        <TextBlock Text="{Binding ErrorMessage}"
+                                   Foreground="{DynamicResource ColorDangerText}"
+                                   FontSize="13"
+                                   TextWrapping="Wrap"/>
+                    </Border>
+
+                    <!-- Action Buttons -->
+                    <Grid ColumnDefinitions="Auto, *, Auto" Margin="0,15,0,0">
+                        <!-- Cancel Button -->
+                        <Button Grid.Column="0"
+                                Classes="outline-btn"
+                                Content="{Binding [Register.ButtonCancel], Source={x:Static loc:LocalizationManager.Instance}}"
+                                Command="{Binding CancelCommand}"
+                                Height="44"
+                                Padding="26,0"
+                                FontSize="15"/>
+
+                        <!-- Register Button -->
+                        <Button Grid.Column="2"
+                                Classes="primary-btn"
+                                Content="{Binding [Register.ButtonSubmit], Source={x:Static loc:LocalizationManager.Instance}}"
+                                Command="{Binding RegisterCommand}"
+                                Height="44"
+                                Padding="32,0"
+                                FontSize="15"/>
+                    </Grid>
+
+                </StackPanel>
+            </Grid>
+        </Border>
+    </ScrollViewer>
+</UserControl>

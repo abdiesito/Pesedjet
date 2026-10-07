@@ -1,0 +1,11 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="850" d:DesignHeight="700"
+             xmlns:vm="using:Pesedjet.Client.ViewModels"
+             x:Class="Pesedjet.Client.Views.LeaderboardView"
+             x:DataType="vm:LeaderboardViewModel"
+             x:CompileBindings="False"
+             Background="{DynamicResource ColorBackground}">
+</UserControl>

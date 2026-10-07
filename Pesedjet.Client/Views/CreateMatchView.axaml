@@ -1,128 +1,101 @@
 ﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:vm="using:Pesedjet.Client.ViewModels"
+             xmlns:loc="using:Pesedjet.Client.Services"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="550"
+             mc:Ignorable="d" d:DesignWidth="650" d:DesignHeight="500"
              x:Class="Pesedjet.Client.Views.CreateMatchView"
              x:DataType="vm:CreateMatchViewModel"
-             Background="{DynamicResource ColorBackground}">
+             x:CompileBindings="False">
 
     <Design.DataContext>
         <vm:CreateMatchViewModel/>
     </Design.DataContext>
 
-    <!-- Tarjeta contenedora -->
-    <Border Background="{DynamicResource ColorSurface}"
-            BorderBrush="{DynamicResource ColorBorder}"
-            BorderThickness="1"
-            CornerRadius="{DynamicResource RadiusCard}"
-            Margin="40"
-            Padding="35">
+    <Grid RowDefinitions="Auto, *, Auto">
+        <!-- Título de la Sección -->
+        <TextBlock Grid.Row="0"
+                   Text="{Binding [PlaySection.ConfigureMatch], Source={x:Static loc:LocalizationManager.Instance}}"
+                   Foreground="{DynamicResource ColorTextPrimary}"
+                   FontSize="{DynamicResource FontSizeTitle}"
+                   FontWeight="Bold"
+                   Margin="0,0,0,28"/>
 
-        <Grid ColumnDefinitions="240, Auto, *">
-            <!-- Columna izquierda: Navegación -->
-            <Grid Grid.Column="0" RowDefinitions="Auto, *, Auto">
-                <Button Grid.Row="0"
-                        Background="Transparent"
-                        Foreground="{DynamicResource ColorTextSecondary}"
-                        FontSize="22"
-                        FontWeight="Bold"
-                        Padding="6"
-                        HorizontalAlignment="Left"
-                        Cursor="Hand">
-                    &lt;
-                </Button>
+        <!-- Formulario de Configuración -->
+        <StackPanel Grid.Row="1" Spacing="24" VerticalAlignment="Top">
+            
+            <!-- 1. Cantidad de Jugadores -->
+            <StackPanel Spacing="10">
+                <TextBlock Text="{Binding [PlaySection.PlayerCount], Source={x:Static loc:LocalizationManager.Instance}}"
+                           Foreground="{DynamicResource ColorTextSecondary}"
+                           FontSize="15"
+                           FontWeight="Medium"/>
 
-                <StackPanel Grid.Row="1" VerticalAlignment="Center" Spacing="16" Margin="0,0,25,0">
-                    <Button Classes="primary-btn"
-                            Height="50"
-                            FontSize="16"
-                            Content="Crear Sala"/>
-
-                    <Button Classes="outline-btn"
-                            Height="50"
-                            FontSize="16"
-                            Content="Unirse"/>
+                <StackPanel Orientation="Horizontal" Spacing="10">
+                    <RadioButton Classes="option-chip" GroupName="PlayersGroup" Content="2" Width="50" Height="42" IsChecked="True"/>
+                    <RadioButton Classes="option-chip" GroupName="PlayersGroup" Content="3" Width="50" Height="42"/>
+                    <RadioButton Classes="option-chip" GroupName="PlayersGroup" Content="4" Width="50" Height="42"/>
+                    <RadioButton Classes="option-chip" GroupName="PlayersGroup" Content="5" Width="50" Height="42"/>
+                    <RadioButton Classes="option-chip" GroupName="PlayersGroup" Content="6" Width="50" Height="42"/>
                 </StackPanel>
-            </Grid>
+            </StackPanel>
 
-            <!-- Divisor -->
-            <Border Grid.Column="1"
-                    Width="1"
-                    Background="{DynamicResource ColorBorder}"
-                    Margin="10,15,35,15"/>
+            <!-- 2. Tipo de Partida -->
+            <StackPanel Spacing="10">
+                <TextBlock Text="{Binding [PlaySection.GameType], Source={x:Static loc:LocalizationManager.Instance}}"
+                           Foreground="{DynamicResource ColorTextSecondary}"
+                           FontSize="15"
+                           FontWeight="Medium"/>
 
-            <!-- Columna derecha: Opciones de configuración -->
-            <Grid Grid.Column="2" RowDefinitions="Auto, *, Auto" Margin="10,0,10,0">
-                <TextBlock Grid.Row="0"
-                           Text="Configurar Partida"
-                           Foreground="{DynamicResource ColorTextPrimary}"
-                           FontSize="{DynamicResource FontSizeTitle}"
-                           FontWeight="Bold"
-                           Margin="0,5,0,32"/>
-
-                <StackPanel Grid.Row="1" Spacing="26" VerticalAlignment="Top">
-                    <!-- Fila: Jugadores -->
-                    <Grid ColumnDefinitions="140, *">
-                        <TextBlock Grid.Column="0"
-                                   Text="Jugadores:"
-                                   Foreground="{DynamicResource ColorTextSecondary}"
-                                   FontSize="16"
-                                   FontWeight="Medium"
-                                   VerticalAlignment="Center"/>
-
-                        <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="12">
-                            <RadioButton Classes="option-chip" GroupName="PlayersGroup" Content="2" Width="44" Height="42" IsChecked="True"/>
-                            <RadioButton Classes="option-chip" GroupName="PlayersGroup" Content="3" Width="44" Height="42"/>
-                            <RadioButton Classes="option-chip" GroupName="PlayersGroup" Content="4" Width="44" Height="42"/>
-                            <RadioButton Classes="option-chip" GroupName="PlayersGroup" Content="5" Width="44" Height="42"/>
-                            <RadioButton Classes="option-chip" GroupName="PlayersGroup" Content="6" Width="44" Height="42"/>
-                        </StackPanel>
-                    </Grid>
-
-                    <!-- Fila: Tipo de Partida -->
-                    <Grid ColumnDefinitions="140, *">
-                        <TextBlock Grid.Column="0"
-                                   Text="Tipo de Partida:"
-                                   Foreground="{DynamicResource ColorTextSecondary}"
-                                   FontSize="16"
-                                   FontWeight="Medium"
-                                   VerticalAlignment="Center"/>
-
-                        <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="14">
-                            <RadioButton Classes="option-chip" GroupName="TypeGroup" Content="Normal" Width="105" Height="42" IsChecked="True"/>
-                            <RadioButton Classes="option-chip" GroupName="TypeGroup" Content="Rápida" Width="105" Height="42"/>
-                        </StackPanel>
-                    </Grid>
-
-                    <!-- Fila: Privacidad -->
-                    <Grid ColumnDefinitions="140, *">
-                        <TextBlock Grid.Column="0"
-                                   Text="Privacidad:"
-                                   Foreground="{DynamicResource ColorTextSecondary}"
-                                   FontSize="16"
-                                   FontWeight="Medium"
-                                   VerticalAlignment="Center"/>
-
-                        <StackPanel Grid.Column="1" Orientation="Horizontal" Spacing="14">
-                            <RadioButton Classes="option-chip" GroupName="PrivacyGroup" Content="Pública" Width="105" Height="42" IsChecked="True"/>
-                            <RadioButton Classes="option-chip" GroupName="PrivacyGroup" Content="Privada" Width="105" Height="42"/>
-                        </StackPanel>
-                    </Grid>
+                <StackPanel Orientation="Horizontal" Spacing="12">
+                    <RadioButton Classes="option-chip" 
+                                 GroupName="TypeGroup" 
+                                 Content="{Binding [PlaySection.GameTypeStandard], Source={x:Static loc:LocalizationManager.Instance}}" 
+                                 Width="120" 
+                                 Height="42" 
+                                 IsChecked="True"/>
+                    <RadioButton Classes="option-chip" 
+                                 GroupName="TypeGroup" 
+                                 Content="{Binding [PlaySection.GameTypeQuick], Source={x:Static loc:LocalizationManager.Instance}}" 
+                                 Width="120" 
+                                 Height="42"/>
                 </StackPanel>
+            </StackPanel>
 
-                <!-- Botón de acción principal -->
-                <Button Grid.Row="2"
-                        Classes="primary-btn"
-                        Content="Crear"
-                        Width="140"
-                        Height="46"
-                        FontSize="16"
-                        HorizontalAlignment="Right"
-                        Margin="0,0,5,5"/>
-            </Grid>
-        </Grid>
-    </Border>
+            <!-- 3. Alcance / Privacidad de la Sala -->
+            <StackPanel Spacing="10">
+                <TextBlock Text="{Binding [PlaySection.RoomPrivacy], Source={x:Static loc:LocalizationManager.Instance}}"
+                           Foreground="{DynamicResource ColorTextSecondary}"
+                           FontSize="15"
+                           FontWeight="Medium"/>
+
+                <StackPanel Orientation="Horizontal" Spacing="12">
+                    <RadioButton Classes="option-chip" 
+                                 GroupName="PrivacyGroup" 
+                                 Content="{Binding [PlaySection.PublicScope], Source={x:Static loc:LocalizationManager.Instance}}" 
+                                 Width="120" 
+                                 Height="42" 
+                                 IsChecked="True"/>
+                    <RadioButton Classes="option-chip" 
+                                 GroupName="PrivacyGroup" 
+                                 Content="{Binding [PlaySection.PrivateScope], Source={x:Static loc:LocalizationManager.Instance}}" 
+                                 Width="120" 
+                                 Height="42"/>
+                </StackPanel>
+            </StackPanel>
+
+        </StackPanel>
+
+        <!-- Botón Crear Sala -->
+        <Button Grid.Row="2"
+                Classes="primary-btn"
+                Content="{Binding [PlaySection.ConfirmCreate], Source={x:Static loc:LocalizationManager.Instance}}"
+                Height="46"
+                Padding="32,0"
+                FontSize="15"
+                HorizontalAlignment="Right"
+                Margin="0,20,0,0"/>
+    </Grid>
 
 </UserControl>

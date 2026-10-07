@@ -1,0 +1,151 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="650" d:DesignHeight="500"
+             xmlns:loc="using:Pesedjet.Client.Services"
+             xmlns:vm="using:Pesedjet.Client.ViewModels"
+             x:Class="Pesedjet.Client.Views.JoinMatchView"
+             x:DataType="vm:JoinMatchViewModel"
+             x:CompileBindings="False">
+
+    <Design.DataContext>
+        <vm:JoinMatchViewModel/>
+    </Design.DataContext>
+
+    <Grid RowDefinitions="Auto, *">
+
+        <!-- Top navigation tabs -->
+        <Border Grid.Row="0" 
+                BorderBrush="{DynamicResource ColorBorder}" 
+                BorderThickness="0,0,0,1" 
+                Margin="0,0,0,25">
+            <StackPanel Orientation="Horizontal" Spacing="16">
+                <RadioButton x:Name="TabCode"
+                             Classes="tab-btn"
+                             GroupName="JoinTabsGroup"
+                             Content="{Binding [JoinMatch.TabCode], Source={x:Static loc:LocalizationManager.Instance}}"
+                             IsChecked="True"/>
+
+                <RadioButton x:Name="TabPublic"
+                             Classes="tab-btn"
+                             GroupName="JoinTabsGroup"
+                             Content="{Binding [JoinMatch.TabPublicRooms], Source={x:Static loc:LocalizationManager.Instance}}"/>
+            </StackPanel>
+        </Border>
+
+        <!-- Main content area -->
+        <Grid Grid.Row="1">
+
+            <!-- Section 1: Join via invitation code (GUI-007) -->
+            <StackPanel IsVisible="{Binding #TabCode.IsChecked}" 
+                        Spacing="20" 
+                        VerticalAlignment="Top" 
+                        Margin="0,5,0,0">
+
+                <TextBlock Text="{Binding [JoinMatch.EnterCode], Source={x:Static loc:LocalizationManager.Instance}}"
+                           Foreground="{DynamicResource ColorTextSecondary}"
+                           FontSize="15"
+                           FontWeight="Medium"/>
+
+                <StackPanel Orientation="Horizontal" Spacing="14" VerticalAlignment="Center">
+                    <TextBox Width="260"
+                             Height="46"
+                             MaxLength="6"
+                             Text="{Binding RoomCode}"
+                             Watermark="------"
+                             LetterSpacing="5"
+                             FontSize="20"
+                             FontWeight="Bold"
+                             TextAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             CornerRadius="{DynamicResource RadiusSmall}"
+                             BorderBrush="{DynamicResource ColorBorderFocus}"/>
+
+                    <Button Classes="primary-btn"
+                            Content="{Binding [PlaySection.JoinMatch], Source={x:Static loc:LocalizationManager.Instance}}"
+                            Command="{Binding JoinMatchCommand}"
+                            Height="46"
+                            Padding="30,0"
+                            FontSize="15"/>
+                </StackPanel>
+
+                <TextBlock Text="{Binding ErrorMessage}"
+                           Foreground="{DynamicResource ColorDangerText}"
+                           FontSize="{DynamicResource FontSizeSmall}"
+                           IsVisible="{Binding HasError}"/>
+            </StackPanel>
+
+            <!-- Section 2: Public rooms browser -->
+            <Grid IsVisible="{Binding #TabPublic.IsChecked}" RowDefinitions="Auto, *">
+                <TextBlock Grid.Row="0"
+                           Text="Salas disponibles para unirse:"
+                           Foreground="{DynamicResource ColorTextSecondary}"
+                           FontSize="15"
+                           FontWeight="Medium"
+                           Margin="0,5,0,16"/>
+
+                <ScrollViewer Grid.Row="1">
+                    <ItemsControl ItemsSource="{Binding PublicRooms}">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Border Background="{DynamicResource ColorBackground}"
+                                        BorderBrush="{DynamicResource ColorBorder}"
+                                        BorderThickness="1"
+                                        CornerRadius="{DynamicResource RadiusSmall}"
+                                        Padding="14,12"
+                                        Margin="0,0,0,10">
+                                    <Grid ColumnDefinitions="*, Auto, Auto, Auto">
+                                        <StackPanel Grid.Column="0" Spacing="3" VerticalAlignment="Center">
+                                            <TextBlock Text="{Binding HostUsername}" 
+                                                       FontWeight="SemiBold" 
+                                                       FontSize="15" 
+                                                       Foreground="{DynamicResource ColorTextPrimary}"/>
+                                            <TextBlock Text="{Binding GameType}" 
+                                                       FontSize="{DynamicResource FontSizeSmall}" 
+                                                       Foreground="{DynamicResource ColorTextMuted}"/>
+                                        </StackPanel>
+
+                                        <Border Grid.Column="1" 
+                                                Background="{DynamicResource ColorSurface}" 
+                                                BorderBrush="{DynamicResource ColorBorder}" 
+                                                BorderThickness="1"
+                                                CornerRadius="4" 
+                                                Padding="8,4" 
+                                                Margin="16,0"
+                                                VerticalAlignment="Center">
+                                            <TextBlock Text="{Binding RoomCode}" 
+                                                       FontWeight="Bold" 
+                                                       LetterSpacing="1"
+                                                       FontSize="13" 
+                                                       Foreground="{DynamicResource ColorTextSecondary}"/>
+                                        </Border>
+
+                                        <TextBlock Grid.Column="2" 
+                                                   Text="{Binding CapacityDisplay}" 
+                                                   FontWeight="Medium" 
+                                                   FontSize="14"
+                                                   Foreground="{DynamicResource ColorTextSecondary}"
+                                                   VerticalAlignment="Center" 
+                                                   Margin="0,0,18,0"/>
+
+                                        <Button Grid.Column="3" 
+                                                Classes="primary-btn" 
+                                                Content="Entrar" 
+                                                Height="36" 
+                                                Padding="18,0"
+                                                FontSize="13"
+                                                Command="{Binding ((vm:JoinMatchViewModel)DataContext).JoinPublicRoomCommand, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                                                CommandParameter="{Binding .}"/>
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </ScrollViewer>
+            </Grid>
+
+        </Grid>
+    </Grid>
+
+</UserControl>
