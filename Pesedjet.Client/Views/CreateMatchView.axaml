@@ -11,8 +11,7 @@
     <Design.DataContext>
         <vm:CreateMatchViewModel/>
     </Design.DataContext>
-
-    <!-- Tarjeta contenedora -->
+    
     <Border Background="{DynamicResource ColorSurface}"
             BorderBrush="{DynamicResource ColorBorder}"
             BorderThickness="1"
@@ -21,10 +20,10 @@
             Padding="35">
 
         <Grid ColumnDefinitions="240, Auto, *">
-            <!-- Columna izquierda: Navegación -->
             <Grid Grid.Column="0" RowDefinitions="Auto, *, Auto">
                 <Button Grid.Row="0"
                         Background="Transparent"
+                        Command="{Binding GoBackCommand}"
                         Foreground="{DynamicResource ColorTextSecondary}"
                         FontSize="22"
                         FontWeight="Bold"
@@ -46,14 +45,12 @@
                             Content="Unirse"/>
                 </StackPanel>
             </Grid>
-
-            <!-- Divisor -->
+            
             <Border Grid.Column="1"
                     Width="1"
                     Background="{DynamicResource ColorBorder}"
                     Margin="10,15,35,15"/>
-
-            <!-- Columna derecha: Opciones de configuración -->
+            
             <Grid Grid.Column="2" RowDefinitions="Auto, *, Auto" Margin="10,0,10,0">
                 <TextBlock Grid.Row="0"
                            Text="Configurar Partida"
@@ -63,7 +60,6 @@
                            Margin="0,5,0,32"/>
 
                 <StackPanel Grid.Row="1" Spacing="26" VerticalAlignment="Top">
-                    <!-- Fila: Jugadores -->
                     <Grid ColumnDefinitions="140, *">
                         <TextBlock Grid.Column="0"
                                    Text="Jugadores:"
@@ -80,8 +76,7 @@
                             <RadioButton Classes="option-chip" GroupName="PlayersGroup" Content="6" Width="44" Height="42"/>
                         </StackPanel>
                     </Grid>
-
-                    <!-- Fila: Tipo de Partida -->
+                    
                     <Grid ColumnDefinitions="140, *">
                         <TextBlock Grid.Column="0"
                                    Text="Tipo de Partida:"
@@ -95,8 +90,7 @@
                             <RadioButton Classes="option-chip" GroupName="TypeGroup" Content="Rápida" Width="105" Height="42"/>
                         </StackPanel>
                     </Grid>
-
-                    <!-- Fila: Privacidad -->
+                    
                     <Grid ColumnDefinitions="140, *">
                         <TextBlock Grid.Column="0"
                                    Text="Privacidad:"
@@ -111,8 +105,7 @@
                         </StackPanel>
                     </Grid>
                 </StackPanel>
-
-                <!-- Botón de acción principal -->
+                
                 <Button Grid.Row="2"
                         Classes="primary-btn"
                         Content="Crear"

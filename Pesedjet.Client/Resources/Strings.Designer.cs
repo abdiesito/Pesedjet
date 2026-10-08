@@ -508,5 +508,11 @@ namespace Pesedjet.Client.Resources {
                 return ResourceManager.GetString("Settings.Sound", resourceCulture);
             }
         }
+        
+        internal static string AccessMenu_LoginSuccess {
+            get {
+                return ResourceManager.GetString("AccessMenu.LoginSuccess", resourceCulture);
+            }
+        }
     }
 }

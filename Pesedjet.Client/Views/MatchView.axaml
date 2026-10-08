@@ -1,6 +1,6 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:loc="using:Pesedjet.Client.Services"
+             xmlns:loc="using:Pesedjet.Client.Utilities"
              xmlns:vm="using:Pesedjet.Client.ViewModels"
              x:DataType="vm:MatchViewModel"
              x:CompileBindings="False"
@@ -8,29 +8,23 @@
 
     <Grid ColumnDefinitions="250, 2, *" Margin="40">
         
-        <!-- ================= COLUMNA IZQUIERDA: MENÚ LATERAL ================= -->
         <StackPanel Grid.Column="0" Spacing="40" Margin="0,0,30,0">
-            <!-- Botón de regreso -->
             <Button Content="❮" FontSize="24" FontWeight="Bold" Background="Transparent" 
                     HorizontalAlignment="Left" Cursor="Hand"/>
             
             <StackPanel Spacing="20">
-                <!-- Create New (Resaltado/Activo) -->
                 <Button Content="{Binding [Match.CreateNew], Source={x:Static loc:LocalizationManager.Instance}}" 
                         FontSize="22" FontWeight="Bold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" 
                         Background="Transparent" BorderBrush="Black" BorderThickness="1" Padding="15"/>
                 
-                <!-- Join -->
                 <Button Content="{Binding [Match.Join], Source={x:Static loc:LocalizationManager.Instance}}" 
                         FontSize="22" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" 
                         Background="Transparent" BorderBrush="Black" BorderThickness="1" Padding="15"/>
             </StackPanel>
         </StackPanel>
-
-        <!-- ================= COLUMNA CENTRAL: SEPARADOR ================= -->
+        
         <Rectangle Grid.Column="1" Fill="Gray" Margin="0,50" />
-
-        <!-- ================= COLUMNA DERECHA: CONFIGURACIÓN ================= -->
+        
         <StackPanel Grid.Column="2" Margin="40,50,0,0" Spacing="40" MaxWidth="500" HorizontalAlignment="Left">
             
             <TextBlock Text="{Binding [Match.ConfigureTitle], Source={x:Static loc:LocalizationManager.Instance}}" 
@@ -38,19 +32,16 @@
 
             <Grid RowDefinitions="Auto, Auto, Auto" ColumnDefinitions="150, *" >
                 
-                <!-- Fila 1: Jugadores -->
                 <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" FontSize="16"
                            Text="{Binding [Match.Players], Source={x:Static loc:LocalizationManager.Instance}}" />
                 <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Spacing="10">
-                    <!-- Theme="{StaticResource {x:Type ToggleButton}}" hace que el radio button luzca como un rectángulo clickeable -->
                     <RadioButton Content="2" GroupName="Players" Theme="{StaticResource {x:Type ToggleButton}}" IsChecked="True"/>
                     <RadioButton Content="3" GroupName="Players" Theme="{StaticResource {x:Type ToggleButton}}"/>
                     <RadioButton Content="4" GroupName="Players" Theme="{StaticResource {x:Type ToggleButton}}"/>
                     <RadioButton Content="5" GroupName="Players" Theme="{StaticResource {x:Type ToggleButton}}"/>
                     <RadioButton Content="6" GroupName="Players" Theme="{StaticResource {x:Type ToggleButton}}"/>
                 </StackPanel>
-
-                <!-- Fila 2: Tipo de partida -->
+                
                 <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" FontSize="16" Margin="0,40,0,0"
                            Text="{Binding [Match.Type], Source={x:Static loc:LocalizationManager.Instance}}" />
                 <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Spacing="10" Margin="0,40,0,0">
@@ -59,8 +50,7 @@
                     <RadioButton Content="{Binding [Match. TypeFast], Source={x:Static loc:LocalizationManager.Instance}}" 
                                  GroupName="Type" Theme="{StaticResource {x:Type ToggleButton}}" Width="100" HorizontalContentAlignment="Center"/>
                 </StackPanel>
-
-                <!-- Fila 3: Privacidad -->
+                
                 <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" FontSize="16" Margin="0,40,0,0" TextWrapping="Wrap"
                            Text="{Binding [Match.Privacy], Source={x:Static loc:LocalizationManager.Instance}}" />
                 <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Spacing="10" Margin="0,40,0,0">
@@ -71,7 +61,6 @@
                 </StackPanel>
             </Grid>
             
-            <!-- Botón Crear -->
             <Button Content="{Binding [Match.Create], Source={x:Static loc:LocalizationManager.Instance}}" 
                     FontSize="18" HorizontalAlignment="Right" Background="Transparent" BorderBrush="Black" BorderThickness="1" Padding="20,10" Margin="0,40,0,0"/>
         </StackPanel>

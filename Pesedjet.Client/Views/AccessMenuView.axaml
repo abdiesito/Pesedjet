@@ -3,15 +3,15 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="950" d:DesignHeight="600"
-             xmlns:loc="using:Pesedjet.Client.Services"
+             xmlns:loc="using:Pesedjet.Client.Utilities"
              xmlns:vm="using:Pesedjet.Client.ViewModels"
              x:DataType="vm:AccessMenuViewModel"
              x:CompileBindings="False"
              x:Class="Pesedjet.Client.Views.AccessMenuView"
              Background="{DynamicResource ColorBackground}">
 
+    <ContentControl Classes="EgyptSandBackground">
     <Grid>
-        <!-- Tarjeta Panorámica Principal -->
         <Border Background="{DynamicResource ColorSurface}"
                 BorderBrush="{DynamicResource ColorBorder}"
                 BorderThickness="1"
@@ -23,24 +23,17 @@
                 VerticalAlignment="Center">
 
             <Grid ColumnDefinitions="*, Auto, 380">
-
-                <!-- ======================================================== -->
-                <!-- COLUMNA IZQUIERDA: Arte / Portada Temática del Videojuego -->
-                <!-- ======================================================== -->
                 <Border Grid.Column="0" 
                         Background="#0A192A" 
                         CornerRadius="4,0,0,4"
                         ClipToBounds="True">
                     <Grid>
-                        <!-- Imagen promocional/artística -->
                         <Image Stretch="UniformToFill"
                                Opacity="0.45"
                                HorizontalAlignment="Center"
                                VerticalAlignment="Center"/>
-
-                        <!-- Capa de presentación y branding sobre la imagen -->
+                        
                         <StackPanel VerticalAlignment="Bottom" Margin="35" Spacing="6">
-                            <!-- Título con tipografía Alfa Slab One -->
                             <TextBlock Classes="brand-title"
                                        Text="{Binding [Menu.Title], Source={x:Static loc:LocalizationManager.Instance}}"
                                        Foreground="{DynamicResource ColorTextLight}"
@@ -53,53 +46,48 @@
                         </StackPanel>
                     </Grid>
                 </Border>
-
-                <!-- Divisor Sutil -->
+                
                 <Border Grid.Column="1" 
                         Width="1" 
                         Background="{DynamicResource ColorBorder}"/>
 
-                <!-- ======================================================== -->
-                <!-- COLUMNA DERECHA: Formulario de Acceso                    -->
-                <!-- ======================================================== -->
+
                 <Grid Grid.Column="2" Margin="35,30" VerticalAlignment="Center">
                     <StackPanel Spacing="16">
-
-                        <!-- Título de Bienvenida -->
+                        
                         <TextBlock Text="{Binding [AccessMenu.WelcomeMessage], Source={x:Static loc:LocalizationManager.Instance}}" 
                                    Foreground="{DynamicResource ColorTextPrimary}"
                                    FontSize="{DynamicResource FontSizeTitle}" 
                                    FontWeight="Bold"
                                    Margin="0,0,0,8"/>
-
-                        <!-- Campo: Nombre de usuario -->
+                        
                         <StackPanel Spacing="5">
                             <TextBlock Text="{Binding [AccessMenu.Username], Source={x:Static loc:LocalizationManager.Instance}}"
                                        Foreground="{DynamicResource ColorTextSecondary}"
                                        FontSize="{DynamicResource FontSizeSmall}"
                                        FontWeight="Medium"/>
-                            <TextBox Watermark="{Binding [AccessMenu.Username], Source={x:Static loc:LocalizationManager.Instance}}"
+                            <TextBox Text="{Binding Username}" 
+                                     Watermark="{Binding [AccessMenu.Username], Source={x:Static loc:LocalizationManager.Instance}}"
                                      CornerRadius="{DynamicResource RadiusSmall}"
                                      BorderBrush="{DynamicResource ColorBorderFocus}"
                                      FontSize="{DynamicResource FontSizeBody}"
                                      Padding="12,8"/>
                         </StackPanel>
-
-                        <!-- Campo: Contraseña -->
+                        
                         <StackPanel Spacing="5">
                             <TextBlock Text="{Binding [AccessMenu.Password], Source={x:Static loc:LocalizationManager.Instance}}"
                                        Foreground="{DynamicResource ColorTextSecondary}"
                                        FontSize="{DynamicResource FontSizeSmall}"
                                        FontWeight="Medium"/>
-                            <TextBox PasswordChar="*"
+                            <TextBox Text="{Binding Password}"
+                                     PasswordChar="*"
                                      Watermark="{Binding [AccessMenu.Password], Source={x:Static loc:LocalizationManager.Instance}}"
                                      CornerRadius="{DynamicResource RadiusSmall}"
                                      BorderBrush="{DynamicResource ColorBorderFocus}"
                                      FontSize="{DynamicResource FontSizeBody}"
                                      Padding="12,8"/>
                         </StackPanel>
-
-                        <!-- Enlace: Olvidé mi contraseña -->
+                        
                         <Button Content="{Binding [AccessMenu.ForgottenPassword], Source={x:Static loc:LocalizationManager.Instance}}" 
                                 Background="Transparent" 
                                 Foreground="{DynamicResource ColorPrimaryHover}" 
@@ -109,15 +97,22 @@
                                 HorizontalAlignment="Right"
                                 Padding="0"
                                 Margin="0,-4,0,2"/>
-
-                        <!-- Botón Principal: Iniciar Sesión -->
+                        
+                        <TextBlock Text="{Binding StatusMessage}" 
+                                   IsVisible="{Binding HasStatusMessage}"
+                                   Foreground="#E53935" 
+                                   FontSize="{DynamicResource FontSizeSmall}"
+                                   HorizontalAlignment="Center"
+                                   TextWrapping="Wrap"
+                                   Margin="0,0,0,4"/>
+                        
                         <Button Classes="primary-btn"
+                                Command="{Binding LoginCommand}"
                                 Content="{Binding [AccessMenu.LogIn], Source={x:Static loc:LocalizationManager.Instance}}" 
                                 HorizontalAlignment="Stretch"
                                 Height="42"
                                 FontSize="15"/>
-
-                        <!-- Registro: ¿No tienes una cuenta? -->
+                        
                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Spacing="5" Margin="0,2,0,0">
                             <TextBlock Text="{Binding [AccessMenu.NewAccountMessage], Source={x:Static loc:LocalizationManager.Instance}}" 
                                        Foreground="{DynamicResource ColorTextSecondary}"
@@ -131,15 +126,14 @@
                                     Cursor="Hand" 
                                     Padding="0"/>
                         </StackPanel>
-
-                        <!-- Separador -->
+                        
                         <Border Height="1" 
                                 Background="{DynamicResource ColorBorder}" 
                                 Margin="0,4"/>
-
-                        <!-- Botón Secundario: Jugar como Invitado -->
+                        
                         <Button Classes="outline-btn"
                                 Content="{Binding [AccessMenu.PlayAsGuest], Source={x:Static loc:LocalizationManager.Instance}}" 
+                                Command="{Binding NavigateToPlayAsGuestCommand}"
                                 HorizontalAlignment="Stretch"
                                 Height="40"
                                 FontSize="14"/>
@@ -150,5 +144,6 @@
             </Grid>
         </Border>
     </Grid>
+    </ContentControl>
 
 </UserControl>

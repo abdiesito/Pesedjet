@@ -3,7 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="550"
-             xmlns:loc="using:Pesedjet.Client.Services"
+             xmlns:loc="using:Pesedjet.Client.Utilities"
              xmlns:vm="using:Pesedjet.Client.ViewModels"
              x:DataType="vm:MenuViewModel"
              x:CompileBindings="False"
@@ -11,13 +11,8 @@
              Background="{DynamicResource ColorBackground}">
 
     <Grid RowDefinitions="Auto, *, Auto" Margin="30">
-        
-        <!-- ========================================== -->
-        <!-- Fila 0: Barra superior (Ficha de usuario, Campana y Salir) -->
-        <!-- ========================================== -->
         <Grid Grid.Row="0" ColumnDefinitions="Auto, *, Auto">
             
-            <!-- Ficha de Usuario -->
             <Border Grid.Column="0" 
                     Background="{DynamicResource ColorSurface}"
                     BorderBrush="{DynamicResource ColorBorder}" 
@@ -53,11 +48,9 @@
                             Margin="8,0,0,0"/>
                 </StackPanel>
             </Border>
-
-            <!-- Sección derecha: Notificaciones y Cerrar sesión -->
+            
             <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="16" VerticalAlignment="Center">
                 
-                <!-- Botón de Notificaciones con Badge numérico -->
                 <Grid Width="44" Height="44" Cursor="Hand">
                     <Button Classes="outline-btn"
                             Width="44"
@@ -92,7 +85,6 @@
                     </Border>
                 </Grid>
                 
-                <!-- Botón de Cerrar Sesión -->
                 <Button Classes="danger-btn"
                         Content="{Binding [Menu.LogOut], Source={x:Static loc:LocalizationManager.Instance}}"
                         Height="44"
@@ -100,9 +92,6 @@
             </StackPanel>
         </Grid>
         
-        <!-- ========================================== -->
-        <!-- Fila 1: Menú Central y Panel de Arte -->
-        <!-- ========================================== -->
         <Grid Grid.Row="1" ColumnDefinitions="320, 40, *" Margin="0,30">
             
             <StackPanel Grid.Column="0" VerticalAlignment="Center" Spacing="14">
@@ -118,16 +107,15 @@
                                FontWeight="Normal"/>
                 </StackPanel>
                 
-                <!-- Botón Jugar (Acción principal destacada en azul sólido) -->
                 <Button Classes="primary-btn"
                         Content="{Binding [Menu.Play], Source={x:Static loc:LocalizationManager.Instance}}" 
                         HorizontalAlignment="Stretch"
                         Height="46"
                         FontSize="15"/>
-
-                <!-- Botones Secundarios (Outline) -->
+                
                 <Button Classes="outline-btn"
                         Content="{Binding [Menu.Friends], Source={x:Static loc:LocalizationManager.Instance}}" 
+                        Command="{Binding NavigateToFriendsCommand}"
                         HorizontalAlignment="Stretch"
                         Height="44"
                         FontSize="15"/>
@@ -163,10 +151,7 @@
                 </Grid>
             </Border>
         </Grid>
-
-        <!-- ========================================== -->
-        <!-- Fila 2: Pie de página -->
-        <!-- ========================================== -->
+        
         <DockPanel Grid.Row="2" LastChildFill="False">
             <TextBlock DockPanel.Dock="Left" 
                        Text="v0.1.0" 
