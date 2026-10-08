@@ -1,5 +1,5 @@
 using CommunityToolkit.Mvvm.ComponentModel;
-using Pesedjet.Client.Services;
+using Pesedjet.Client.Utilities;
 
 namespace Pesedjet.Client.ViewModels;
 

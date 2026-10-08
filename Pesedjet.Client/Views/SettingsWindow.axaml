@@ -16,7 +16,6 @@
         Background="Transparent"
         TransparencyLevelHint="Transparent">
 
-    <!-- Modal Card Shell -->
     <Border Background="{DynamicResource ColorSurface}"
             BorderBrush="{DynamicResource ColorBorder}"
             BorderThickness="1"
@@ -27,7 +26,6 @@
 
         <Grid RowDefinitions="Auto, Auto, *">
             
-            <!-- Header: Close button aligned to top-right -->
             <Grid Grid.Row="0" ColumnDefinitions="*, Auto">
                 <TextBlock Grid.Column="0"
                            Text="{Binding [Settings.SectionMessage], Source={x:Static loc:LocalizationManager.Instance}}"
@@ -54,19 +52,16 @@
                 </Button>
             </Grid>
 
-            <!-- Separator -->
             <Border Grid.Row="1"
                     Height="1"
                     Background="{DynamicResource ColorBorder}"
                     Margin="0,16,0,24"/>
 
-            <!-- Settings Options Grid -->
             <Grid Grid.Row="2" 
                   RowDefinitions="Auto, Auto, Auto" 
                   ColumnDefinitions="160, *" 
                   VerticalAlignment="Center">
                 
-                <!-- Option 1: Language -->
                 <TextBlock Grid.Row="0" Grid.Column="0"
                            Text="{Binding [Settings.Language], Source={x:Static loc:LocalizationManager.Instance}}"
                            Foreground="{DynamicResource ColorTextSecondary}"
@@ -83,7 +78,6 @@
                     <ComboBoxItem Content="English (US)"/>
                 </ComboBox>
 
-                <!-- Option 2: Sound -->
                 <TextBlock Grid.Row="1" Grid.Column="0"
                            Text="{Binding [Settings.Sound], Source={x:Static loc:LocalizationManager.Instance}}"
                            Foreground="{DynamicResource ColorTextSecondary}"
@@ -99,7 +93,6 @@
                               OnContent=""
                               OffContent=""/>
 
-                <!-- Option 3: Music -->
                 <TextBlock Grid.Row="2" Grid.Column="0"
                            Text="{Binding [Settings.Music], Source={x:Static loc:LocalizationManager.Instance}}"
                            Foreground="{DynamicResource ColorTextSecondary}"

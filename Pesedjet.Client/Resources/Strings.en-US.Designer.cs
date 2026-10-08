@@ -1058,6 +1058,11 @@ namespace Pesedjet.Client.Resources {
             }
         }
         
+        internal static string AccessMenu_LoginSuccess {
+            get {
+                return ResourceManager.GetString("AccessMenu.LoginSuccess", resourceCulture);
+            }
+        }
         /// <summary>
         ///   Looks up a localized string similar to Cancel.
         /// </summary>

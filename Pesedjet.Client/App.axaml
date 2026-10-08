@@ -3,7 +3,6 @@
              x:Class="Pesedjet.Client.App"
              xmlns:local="using:Pesedjet.Client"
              RequestedThemeVariant="Light">
-    <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
     <Application.DataTemplates>
         <local:ViewLocator/>
@@ -12,6 +11,7 @@
     <Application.Styles>
         <FluentTheme />
         <StyleInclude Source="avares://Pesedjet.Client/Styles/AppStyles.axaml" />
+        <StyleInclude Source="avares://Pesedjet.Client/Styles/SandBackgroundStyle.axaml" />
         <StyleInclude Source="avares://Pesedjet.Client/Styles/ControlsStyles.axaml" />
     </Application.Styles>        
 </Application>

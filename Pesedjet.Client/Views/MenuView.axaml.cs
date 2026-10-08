@@ -15,11 +15,9 @@ public partial class MenuView : UserControl
     {
         var settingsModal = new SettingsWindow();
         
-        // Buscamos la MainWindow que contiene este UserControl
         var topLevel = this.GetVisualRoot() as Window;
         if (topLevel != null)
         {
-            // Bloquea la MainWindow hasta que SettingsWindow se cierre
             await settingsModal.ShowDialog(topLevel); 
         }
     }

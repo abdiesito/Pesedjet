@@ -28,6 +28,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Pesedjet.Contracts\Pesedjet.Contracts.csproj" />
+    <ProjectReference Include="..\Pesedjet.Server\Pesedjet.Server.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -51,14 +52,6 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>Strings.en-US.resx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Resources\Strings.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Strings.resx</DependentUpon>
     </Compile>
   </ItemGroup>
 </Project>

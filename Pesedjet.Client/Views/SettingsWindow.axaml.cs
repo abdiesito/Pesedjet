@@ -12,7 +12,8 @@ public partial class SettingsWindow : Window
         DataContext = new SettingsViewModel();
     }
 
-    private void CloseButtonClick(object? sender, RoutedEventArgs e)
+    //TO DO: sender en estandar y e
+    private void CloseButtonClick(object?  sender, RoutedEventArgs e)
     {
         this.Close();
     }

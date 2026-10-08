@@ -1,7 +1,7 @@
 ﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:vm="using:Pesedjet.Client.ViewModels"
-             xmlns:loc="using:Pesedjet.Client.Services"
+             xmlns:loc="using:Pesedjet.Client.Utilities"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="900" d:DesignHeight="550"
@@ -13,8 +13,7 @@
     <Design.DataContext>
         <vm:FriendsViewModel/>
     </Design.DataContext>
-
-    <!-- Tarjeta blanca contenedora -->
+    
     <Border Background="{DynamicResource ColorSurface}"
             BorderBrush="{DynamicResource ColorBorder}"
             BorderThickness="1"
@@ -23,13 +22,11 @@
             Padding="30">
 
         <Grid RowDefinitions="Auto, Auto, *">
-
-            <!-- Cambia ColumnDefinitions="Auto, *, Auto" por esto: -->
             <Grid Grid.Row="0" ColumnDefinitions="Auto, *, 320" Margin="0,0,0,20">
-                <!-- El título a la izquierda -->
                 <StackPanel Grid.Column="0" Orientation="Horizontal" Spacing="12" VerticalAlignment="Center">
                     <Button Classes="outline-btn"
                             Content="&lt;"
+                            Command="{Binding GoBackCommand}"
                             FontSize="18"
                             FontWeight="Bold"
                             Width="38"
@@ -42,8 +39,7 @@
                                FontWeight="Bold"
                                VerticalAlignment="Center"/>
                 </StackPanel>
-
-                <!-- El buscador a la derecha con ancho fijo y alineado -->
+                
                 <StackPanel Grid.Column="2" Orientation="Horizontal" Spacing="8" HorizontalAlignment="Right">
                     <TextBox Width="200"
                              Watermark="{Binding [NewFriend.NewFriendMessage], Source={x:Static loc:LocalizationManager.Instance}}"
@@ -55,8 +51,7 @@
                             Content="{Binding [NewFriend.AddFriend], Source={x:Static loc:LocalizationManager.Instance}}"/>
                 </StackPanel>
             </Grid>
-
-            <!-- Fila 1: Pestañas de navegación -->
+            
             <Border Grid.Row="1" BorderBrush="{DynamicResource ColorBorder}" BorderThickness="0,0,0,1" Margin="0,0,0,15">
                 <StackPanel Orientation="Horizontal" Spacing="12">
                     <RadioButton Classes="tab-btn"
@@ -71,12 +66,10 @@
                                  Content="{Binding [FriendsSection.BlockedPlayers], Source={x:Static loc:LocalizationManager.Instance}}"/>
                 </StackPanel>
             </Border>
-
-            <!-- Fila 2: Lista de ejemplos visuales -->
+            
             <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">
                 <StackPanel Spacing="10">
-
-                    <!-- Ejemplo 1: Amigo conectado (CU-007) -->
+                    
                     <Border Background="{DynamicResource ColorBackground}"
                             BorderBrush="{DynamicResource ColorBorder}"
                             BorderThickness="1"
@@ -99,8 +92,7 @@
                             </StackPanel>
                         </Grid>
                     </Border>
-
-                    <!-- Ejemplo 2: Solicitud entrante pendiente (CU-010) -->
+                    
                     <Border Background="{DynamicResource ColorBackground}"
                             BorderBrush="{DynamicResource ColorBorder}"
                             BorderThickness="1"
@@ -122,8 +114,7 @@
                             </StackPanel>
                         </Grid>
                     </Border>
-
-                    <!-- Ejemplo 3: Usuario bloqueado (CU-009) -->
+                    
                     <Border Background="{DynamicResource ColorBackground}"
                             BorderBrush="{DynamicResource ColorBorder}"
                             BorderThickness="1"
