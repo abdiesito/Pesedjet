@@ -165,5 +165,10 @@
     <Style Selector="RadioButton.option-chip:pointerover /template/ Border#ChipBorder">
         <Setter Property="BorderBrush" Value="{DynamicResource ColorPrimary}"/>
     </Style>
+    <!-- Validation Error Style for Inputs -->
+    <Style Selector="TextBox.input-error">
+        <Setter Property="BorderBrush" Value="{DynamicResource ColorDangerText}"/>
+        <Setter Property="BorderThickness" Value="1.5"/>
+    </Style>
     
 </Styles>

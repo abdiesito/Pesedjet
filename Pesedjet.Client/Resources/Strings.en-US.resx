@@ -168,4 +168,218 @@
     <data name="FriendsListSection.Reject" xml:space="preserve">
     <value>Reject</value>
   </data>
+    <data name="PlaySection.NewMatch" xml:space="preserve">
+        <value>Create Room</value>
+    </data>
+    <data name="PlaySection.JoinMatch" xml:space="preserve">
+        <value>Join</value>
+    </data>
+    <data name="PlaySection.ConfigureMatch" xml:space="preserve">
+        <value>Match Setup</value>
+    </data>
+    <data name="PlaySection.PlayerCount" xml:space="preserve">
+        <value>Number of players:</value>
+    </data>
+    <data name="PlaySection.GameType" xml:space="preserve">
+        <value>Game Type:</value>
+    </data>
+    <data name="PlaySection.GameTypeStandard" xml:space="preserve">
+        <value>Standard</value>
+    </data>
+    <data name="PlaySection.GameTypeQuick" xml:space="preserve">
+        <value>Quick</value>
+    </data>
+    <data name="PlaySection.RoomPrivacy" xml:space="preserve">
+        <value>Room privacy:</value>
+    </data>
+    <data name="PlaySection.PublicScope" xml:space="preserve">
+        <value>Public</value>
+    </data>
+    <data name="PlaySection.PrivateScope" xml:space="preserve">
+        <value>Private</value>
+    </data>
+    <data name="PlaySection.ConfirmCreate" xml:space="preserve">
+        <value>Create</value>
+    </data>
+
+    <!-- ========================================== -->
+    <!-- MATCH SECTION: JOIN & PUBLIC ROOMS         -->
+    <!-- ========================================== -->
+    <data name="JoinMatch.TabCode" xml:space="preserve">
+        <value>Invitation Code</value>
+    </data>
+    <data name="JoinMatch.TabPublicRooms" xml:space="preserve">
+        <value>Browse Public Rooms</value>
+    </data>
+    <data name="JoinMatch.EnterCode" xml:space="preserve">
+        <value>Enter the invitation code</value>
+    </data>
+    <data name="JoinMatch.NoPublicRooms" xml:space="preserve">
+        <value>No public rooms available at this moment.</value>
+    </data>
+    <data name="JoinMatch.Error.InvalidCodeFormat" xml:space="preserve">
+        <value>Please enter a valid 6-character room code.</value>
+    </data>
+    <data name="JoinMatch.Error.RoomNotFound" xml:space="preserve">
+        <value>No game room was found associated with the entered code.</value>
+    </data>
+    <data name="JoinMatch.Error.RoomFull" xml:space="preserve">
+        <value>The selected room has reached its maximum capacity.</value>
+    </data>
+    <data name="JoinMatch.Error.GameInProgress" xml:space="preserve">
+        <value>The match for this room has already started and does not accept new players.</value>
+    </data>
+    <data name="Register.Title" xml:space="preserve">
+    <value>Create Account</value>
+  </data>
+    <data name="Register.FullName" xml:space="preserve">
+    <value>Full Name</value>
+  </data>
+    <data name="Register.Gametag" xml:space="preserve">
+    <value>Username (Gametag)</value>
+  </data>
+    <data name="Register.BirthDate" xml:space="preserve">
+    <value>Date of Birth</value>
+  </data>
+    <data name="Register.Email" xml:space="preserve">
+    <value>Email Address</value>
+  </data>
+    <data name="Register.Password" xml:space="preserve">
+    <value>Password</value>
+  </data>
+    <data name="Register.ConfirmPassword" xml:space="preserve">
+    <value>Confirm Password</value>
+  </data>
+    <data name="Register.ButtonSubmit" xml:space="preserve">
+    <value>Register</value>
+  </data>
+    <data name="Register.ButtonCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+    <data name="Register.Error.RequiredFields" xml:space="preserve">
+    <value>Please complete all required fields with the correct format.</value>
+  </data>
+    <data name="Register.Error.InvalidPassword" xml:space="preserve">
+    <value>The password must be at least 8 characters, include an uppercase letter, a number, a special character, and both fields must match.</value>
+  </data>
+    <data name="Register.Error.Underage" xml:space="preserve">
+    <value>Registration is only allowed for individuals who are 12 years of age or older.</value>
+  </data>
+    <data name="Register.Error.EmailInUse" xml:space="preserve">
+    <value>The provided email address is already associated with an account.</value>
+  </data>
+    <data name="Register.Error.GametagInUse" xml:space="preserve">
+    <value>The username is unavailable. Please choose another one.</value>
+  </data>
+    <data name="TwoFactor.Title" xml:space="preserve">
+    <value>Two-Factor Verification</value>
+  </data>
+    <data name="TwoFactor.Instruction" xml:space="preserve">
+    <value>Enter the 6-digit code sent to your email. The code expires in:</value>
+  </data>
+    <data name="TwoFactor.ButtonVerify" xml:space="preserve">
+    <value>Verify</value>
+  </data>
+    <data name="TwoFactor.ButtonResend" xml:space="preserve">
+    <value>Resend code</value>
+  </data>
+    <data name="TwoFactor.ButtonCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+    <data name="TwoFactor.Error.InvalidCodeLength" xml:space="preserve">
+    <value>The verification code must contain exactly 6 numeric digits.</value>
+  </data>
+    <data name="TwoFactor.Error.ExpiredCode" xml:space="preserve">
+    <value>The code has expired. Please request a new one.</value>
+  </data>
+    <data name="TwoFactor.Error.IncorrectCode" xml:space="preserve">
+    <value>The entered code is incorrect. Please try again.</value>
+  </data>
+    <data name="TwoFactor.ResendSuccess" xml:space="preserve">
+    <value>A new verification code has been sent to your email.</value>
+  </data>
+    <data name="ForgotPassword.Title" xml:space="preserve">
+    <value>Reset Password</value>
+  </data>
+    <data name="ForgotPassword.InstructionStep1" xml:space="preserve">
+    <value>Enter the email address associated with your account to receive a verification code.</value>
+  </data>
+    <data name="ForgotPassword.InstructionStep2" xml:space="preserve">
+    <value>Enter the 6-digit code sent to your email and your new password.</value>
+  </data>
+    <data name="ForgotPassword.Email" xml:space="preserve">
+    <value>Email Address</value>
+  </data>
+    <data name="ForgotPassword.Code" xml:space="preserve">
+    <value>Verification code</value>
+  </data>
+    <data name="ForgotPassword.NewPassword" xml:space="preserve">
+    <value>New password</value>
+  </data>
+    <data name="ForgotPassword.ConfirmPassword" xml:space="preserve">
+    <value>Confirm new password</value>
+  </data>
+    <data name="ForgotPassword.ButtonSendCode" xml:space="preserve">
+    <value>Send code</value>
+  </data>
+    <data name="ForgotPassword.ButtonReset" xml:space="preserve">
+    <value>Reset password</value>
+  </data>
+    <data name="ForgotPassword.ButtonCancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+    <data name="ForgotPassword.Error.InvalidEmail" xml:space="preserve">
+    <value>Please enter a valid email address.</value>
+  </data>
+    <data name="ForgotPassword.Error.InvalidCode" xml:space="preserve">
+    <value>The verification code must contain exactly 6 numeric digits.</value>
+  </data>
+    <data name="ForgotPassword.Error.InvalidPassword" xml:space="preserve">
+    <value>The password must be at least 8 characters, include an uppercase letter, a number, a special character, and both fields must match.</value>
+  </data>
+    <data name="ForgotPassword.SuccessMessage" xml:space="preserve">
+    <value>Your password has been successfully updated.</value>
+  </data>
+    <data name="Profile.Title" xml:space="preserve">
+    <value>My Profile</value>
+  </data>
+    <data name="Profile.FullName" xml:space="preserve">
+    <value>Full Name</value>
+  </data>
+    <data name="Profile.Gametag" xml:space="preserve">
+    <value>Username</value>
+  </data>
+    <data name="Profile.Email" xml:space="preserve">
+    <value>Email Address</value>
+  </data>
+    <data name="Profile.BirthDate" xml:space="preserve">
+    <value>Date of Birth</value>
+  </data>
+    <data name="Leaderboard.Title" xml:space="preserve">
+    <value>Leaderboard</value>
+  </data>
+    <data name="Leaderboard.FilterAll" xml:space="preserve">
+    <value>Global</value>
+  </data>
+    <data name="Leaderboard.FilterFriends" xml:space="preserve">
+    <value>Friends Only</value>
+  </data>
+    <data name="Leaderboard.Rank" xml:space="preserve">
+    <value>Rank</value>
+  </data>
+    <data name="Leaderboard.Player" xml:space="preserve">
+    <value>Player</value>
+  </data>
+    <data name="Leaderboard.Victories" xml:space="preserve">
+    <value>Matches Won</value>
+  </data>
+    <data name="Leaderboard.Amulets" xml:space="preserve">
+    <value>Amulets Earned</value>
+  </data>
+    <data name="Leaderboard.ActionProfile" xml:space="preserve">
+    <value>View Profile</value>
+  </data>
+    <data name="Leaderboard.Empty" xml:space="preserve">
+    <value>No scores recorded in the selected category yet.</value>
+  </data>  
 </root>

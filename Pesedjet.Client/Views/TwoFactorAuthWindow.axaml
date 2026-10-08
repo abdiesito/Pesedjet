@@ -1,0 +1,155 @@
+﻿<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="380"
+        xmlns:loc="using:Pesedjet.Client.Services"
+        xmlns:vm="using:Pesedjet.Client.ViewModels"
+        x:Class="Pesedjet.Client.Views.TwoFactorAuthWindow"
+        x:DataType="vm:TwoFactorAuthViewModel"
+        x:CompileBindings="False"
+        Title="Two-Factor Verification"
+        Width="480" Height="380"
+        CanResize="False"
+        WindowStartupLocation="CenterOwner"
+        SystemDecorations="None"
+        Background="Transparent"
+        TransparencyLevelHint="Transparent">
+
+    <Design.DataContext>
+        <vm:TwoFactorAuthViewModel/>
+    </Design.DataContext>
+
+    <!-- Modal Card Shell -->
+    <Border Background="{DynamicResource ColorSurface}"
+            BorderBrush="{DynamicResource ColorBorder}"
+            BorderThickness="1"
+            CornerRadius="{DynamicResource RadiusCard}"
+            BoxShadow="0 8 24 0 #40000000"
+            Margin="10"
+            Padding="28,24">
+
+        <Grid RowDefinitions="Auto, Auto, *">
+
+            <!-- Header: Title and Close button -->
+            <Grid Grid.Row="0" ColumnDefinitions="*, Auto">
+                <TextBlock Grid.Column="0"
+                           Text="{Binding [TwoFactor.Title], Source={x:Static loc:LocalizationManager.Instance}}"
+                           Foreground="{DynamicResource ColorTextPrimary}"
+                           FontSize="20"
+                           FontWeight="Bold"
+                           VerticalAlignment="Center"/>
+
+                <Button x:Name="btnClose"
+                        Grid.Column="1"
+                        Classes="outline-btn"
+                        Width="36"
+                        Height="36"
+                        Padding="0"
+                        CornerRadius="18"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        Command="{Binding CancelCommand}"
+                        ToolTip.Tip="Cerrar">
+                    <PathIcon Data="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                              Width="14"
+                              Height="14"
+                              Foreground="{DynamicResource ColorTextSecondary}"/>
+                </Button>
+            </Grid>
+
+            <!-- Separator -->
+            <Border Grid.Row="1"
+                    Height="1"
+                    Background="{DynamicResource ColorBorder}"
+                    Margin="0,16,0,20"/>
+
+            <!-- Main Content Form -->
+            <StackPanel Grid.Row="2" Spacing="16">
+
+                <TextBlock Text="{Binding [TwoFactor.Instruction], Source={x:Static loc:LocalizationManager.Instance}}"
+                           Foreground="{DynamicResource ColorTextSecondary}"
+                           FontSize="14"
+                           TextWrapping="Wrap"/>
+
+                <!-- Timer & Code Input Row -->
+                <Grid ColumnDefinitions="*, Auto" Margin="0,4,0,0">
+                    <TextBox Grid.Column="0"
+                             Width="220"
+                             Height="48"
+                             MaxLength="6"
+                             Text="{Binding VerificationCode}"
+                             Watermark="------"
+                             LetterSpacing="6"
+                             FontSize="22"
+                             FontWeight="Bold"
+                             TextAlignment="Center"
+                             VerticalContentAlignment="Center"
+                             HorizontalAlignment="Left"
+                             Classes.input-error="{Binding IsCodeInvalid}"/>
+
+                    <Border Grid.Column="1"
+                            Background="{DynamicResource ColorBackground}"
+                            BorderBrush="{DynamicResource ColorBorder}"
+                            BorderThickness="1"
+                            CornerRadius="{DynamicResource RadiusSmall}"
+                            Padding="12,6"
+                            VerticalAlignment="Center">
+                        <TextBlock Text="{Binding TimerDisplay}"
+                                   Foreground="{DynamicResource ColorTextPrimary}"
+                                   FontSize="16"
+                                   FontWeight="Bold"
+                                   VerticalAlignment="Center"/>
+                    </Border>
+                </Grid>
+
+                <!-- Error Message Banner -->
+                <Border Background="#1AE04848"
+                        BorderBrush="{DynamicResource ColorDangerText}"
+                        BorderThickness="1"
+                        CornerRadius="{DynamicResource RadiusSmall}"
+                        Padding="10,8"
+                        IsVisible="{Binding HasError}">
+                    <TextBlock Text="{Binding ErrorMessage}"
+                               Foreground="{DynamicResource ColorDangerText}"
+                               FontSize="13"
+                               TextWrapping="Wrap"/>
+                </Border>
+
+                <!-- Info Success Banner -->
+                <Border Background="#1A10B981"
+                        BorderBrush="#10B981"
+                        BorderThickness="1"
+                        CornerRadius="{DynamicResource RadiusSmall}"
+                        Padding="10,8"
+                        IsVisible="{Binding HasInfoMessage}">
+                    <TextBlock Text="{Binding InfoMessage}"
+                               Foreground="#10B981"
+                               FontSize="13"
+                               TextWrapping="Wrap"/>
+                </Border>
+
+                <!-- Action Buttons -->
+                <Grid ColumnDefinitions="Auto, *, Auto" Margin="0,10,0,0">
+                    <Button Grid.Column="0"
+                            Classes="outline-btn"
+                            Content="{Binding [TwoFactor.ButtonResend], Source={x:Static loc:LocalizationManager.Instance}}"
+                            Command="{Binding ResendCodeCommand}"
+                            IsEnabled="{Binding IsResendEnabled}"
+                            Height="40"
+                            Padding="16,0"
+                            FontSize="13"/>
+
+                    <Button Grid.Column="2"
+                            Classes="primary-btn"
+                            Content="{Binding [TwoFactor.ButtonVerify], Source={x:Static loc:LocalizationManager.Instance}}"
+                            Command="{Binding VerifyCodeCommand}"
+                            Height="40"
+                            Padding="24,0"
+                            FontSize="14"/>
+                </Grid>
+
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>

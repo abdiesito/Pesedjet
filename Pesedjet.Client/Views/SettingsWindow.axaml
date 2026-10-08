@@ -1,46 +1,113 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:loc="using:Pesedjet.Client.Utilities"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="520" d:DesignHeight="380"
+        xmlns:loc="using:Pesedjet.Client.Services"
         xmlns:vm="using:Pesedjet.Client.ViewModels"
+        x:Class="Pesedjet.Client.Views.SettingsWindow"
         x:DataType="vm:SettingsViewModel"
         x:CompileBindings="False"
-        x:Class="Pesedjet.Client.Views.SettingsWindow"
         Title="Settings"
-        Width="500" Height="350"
+        Width="520" Height="380"
         CanResize="False"
         WindowStartupLocation="CenterOwner"
         SystemDecorations="None"
-        >
+        Background="Transparent"
+        TransparencyLevelHint="Transparent">
 
-    <Grid RowDefinitions="Auto, Auto, *" Margin="20">
-        
-        <Button Grid.Row="0" Content="✕" FontSize="20" Background="Transparent" 
-                HorizontalAlignment="Left" Cursor="Hand"
-                Click="CloseButtonClick" />
-        
-        <TextBlock Grid.Row="1" Text="{Binding [Settings.SectionMessage], Source={x:Static loc:LocalizationManager.Instance}}" 
-                   FontSize="24" FontWeight="Bold" Margin="20,10,0,10" />
-        
-        <Border Grid.Row="2" BorderBrush="Gray" BorderThickness="1" Padding="40,30">
-            <Grid RowDefinitions="Auto, Auto, Auto" ColumnDefinitions="150, Auto" >
-                
-                <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" FontSize="16"
-                           Text="{Binding [Settings.Language], Source={x:Static loc:LocalizationManager.Instance}}" />
-                <ComboBox Grid.Row="0" Grid.Column="1" Width="150" SelectedIndex="{Binding SelectedLanguageIndex}">
-                    <ComboBoxItem Content="ESP (MX)" />
-                    <ComboBoxItem Content="ENG (US)" />
-                </ComboBox>
-                
-                <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" FontSize="16" Margin="0,30,0,0"
-                           Text="{Binding [Settings.Sound], Source={x:Static loc:LocalizationManager.Instance}}" />
-                <ToggleSwitch Grid.Row="1" Grid.Column="1" Margin="0,30,0,0"
-                              IsChecked="{Binding IsSoundEnabled}" OnContent="" OffContent="" />
-                
-                <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" FontSize="16" Margin="0,30,0,0"
-                           Text="{Binding [Settings.Music], Source={x:Static loc:LocalizationManager.Instance}}" />
-                <ToggleSwitch Grid.Row="2" Grid.Column="1" Margin="0,30,0,0"
-                              IsChecked="{Binding IsMusicEnabled}" OnContent="" OffContent="" />
+    <Border Background="{DynamicResource ColorSurface}"
+            BorderBrush="{DynamicResource ColorBorder}"
+            BorderThickness="1"
+            CornerRadius="{DynamicResource RadiusCard}"
+            BoxShadow="0 8 24 0 #40000000"
+            Margin="10"
+            Padding="24">
+
+        <Grid RowDefinitions="Auto, Auto, *">
+            
+            <Grid Grid.Row="0" ColumnDefinitions="*, Auto">
+                <TextBlock Grid.Column="0"
+                           Text="{Binding [Settings.SectionMessage], Source={x:Static loc:LocalizationManager.Instance}}"
+                           Foreground="{DynamicResource ColorTextPrimary}"
+                           FontSize="20"
+                           FontWeight="Bold"
+                           VerticalAlignment="Center"/>
+
+                <Button x:Name="btnClose"
+                        Grid.Column="1"
+                        Classes="outline-btn"
+                        Width="36"
+                        Height="36"
+                        Padding="0"
+                        CornerRadius="18"
+                        HorizontalContentAlignment="Center"
+                        VerticalContentAlignment="Center"
+                        Click="CloseButtonClick"
+                        ToolTip.Tip="Cerrar">
+                    <PathIcon Data="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                              Width="14"
+                              Height="14"
+                              Foreground="{DynamicResource ColorTextSecondary}"/>
+                </Button>
             </Grid>
-        </Border>
-    </Grid>
+
+            <Border Grid.Row="1"
+                    Height="1"
+                    Background="{DynamicResource ColorBorder}"
+                    Margin="0,16,0,24"/>
+
+            <Grid Grid.Row="2" 
+                  RowDefinitions="Auto, Auto, Auto" 
+                  ColumnDefinitions="160, *" 
+                  VerticalAlignment="Center">
+                
+                <TextBlock Grid.Row="0" Grid.Column="0"
+                           Text="{Binding [Settings.Language], Source={x:Static loc:LocalizationManager.Instance}}"
+                           Foreground="{DynamicResource ColorTextSecondary}"
+                           FontSize="15"
+                           FontWeight="Medium"
+                           VerticalAlignment="Center"/>
+
+                <ComboBox Grid.Row="0" Grid.Column="1"
+                          Width="160"
+                          Height="38"
+                          HorizontalAlignment="Right"
+                          SelectedIndex="{Binding SelectedLanguageIndex}">
+                    <ComboBoxItem Content="Español (MX)"/>
+                    <ComboBoxItem Content="English (US)"/>
+                </ComboBox>
+
+                <TextBlock Grid.Row="1" Grid.Column="0"
+                           Text="{Binding [Settings.Sound], Source={x:Static loc:LocalizationManager.Instance}}"
+                           Foreground="{DynamicResource ColorTextSecondary}"
+                           FontSize="15"
+                           FontWeight="Medium"
+                           VerticalAlignment="Center"
+                           Margin="0,22,0,0"/>
+
+                <ToggleSwitch Grid.Row="1" Grid.Column="1"
+                              HorizontalAlignment="Right"
+                              Margin="0,22,0,0"
+                              IsChecked="{Binding IsSoundEnabled}"
+                              OnContent=""
+                              OffContent=""/>
+
+                <TextBlock Grid.Row="2" Grid.Column="0"
+                           Text="{Binding [Settings.Music], Source={x:Static loc:LocalizationManager.Instance}}"
+                           Foreground="{DynamicResource ColorTextSecondary}"
+                           FontSize="15"
+                           FontWeight="Medium"
+                           VerticalAlignment="Center"
+                           Margin="0,22,0,0"/>
+
+                <ToggleSwitch Grid.Row="2" Grid.Column="1"
+                              HorizontalAlignment="Right"
+                              Margin="0,22,0,0"
+                              IsChecked="{Binding IsMusicEnabled}"
+                              OnContent=""
+                              OffContent=""/>
+            </Grid>
+        </Grid>
+    </Border>
 </Window>

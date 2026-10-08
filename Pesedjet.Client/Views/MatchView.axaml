@@ -1,68 +1,60 @@
 <UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:loc="using:Pesedjet.Client.Utilities"
+xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="950" d:DesignHeight="600"
+             xmlns:loc="using:Pesedjet.Client.Services"
              xmlns:vm="using:Pesedjet.Client.ViewModels"
              x:DataType="vm:MatchViewModel"
              x:CompileBindings="False"
-             x:Class="Pesedjet.Client.Views.MatchView">
+             x:Class="Pesedjet.Client.Views.MatchView"
+             Background="{DynamicResource ColorBackground}">
 
-    <Grid ColumnDefinitions="250, 2, *" Margin="40">
-        
-        <StackPanel Grid.Column="0" Spacing="40" Margin="0,0,30,0">
-            <Button Content="❮" FontSize="24" FontWeight="Bold" Background="Transparent" 
-                    HorizontalAlignment="Left" Cursor="Hand"/>
-            
-            <StackPanel Spacing="20">
-                <Button Content="{Binding [Match.CreateNew], Source={x:Static loc:LocalizationManager.Instance}}" 
-                        FontSize="22" FontWeight="Bold" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" 
-                        Background="Transparent" BorderBrush="Black" BorderThickness="1" Padding="15"/>
-                
-                <Button Content="{Binding [Match.Join], Source={x:Static loc:LocalizationManager.Instance}}" 
-                        FontSize="22" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" 
-                        Background="Transparent" BorderBrush="Black" BorderThickness="1" Padding="15"/>
-            </StackPanel>
-        </StackPanel>
-        
-        <Rectangle Grid.Column="1" Fill="Gray" Margin="0,50" />
-        
-        <StackPanel Grid.Column="2" Margin="40,50,0,0" Spacing="40" MaxWidth="500" HorizontalAlignment="Left">
-            
-            <TextBlock Text="{Binding [Match.ConfigureTitle], Source={x:Static loc:LocalizationManager.Instance}}" 
-                       FontSize="24" />
+    <Border Background="{DynamicResource ColorSurface}"
+            BorderBrush="{DynamicResource ColorBorder}"
+            BorderThickness="1"
+            CornerRadius="{DynamicResource RadiusCard}"
+            Margin="40"
+            Padding="35">
 
-            <Grid RowDefinitions="Auto, Auto, Auto" ColumnDefinitions="150, *" >
-                
-                <TextBlock Grid.Row="0" Grid.Column="0" VerticalAlignment="Center" FontSize="16"
-                           Text="{Binding [Match.Players], Source={x:Static loc:LocalizationManager.Instance}}" />
-                <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" Spacing="10">
-                    <RadioButton Content="2" GroupName="Players" Theme="{StaticResource {x:Type ToggleButton}}" IsChecked="True"/>
-                    <RadioButton Content="3" GroupName="Players" Theme="{StaticResource {x:Type ToggleButton}}"/>
-                    <RadioButton Content="4" GroupName="Players" Theme="{StaticResource {x:Type ToggleButton}}"/>
-                    <RadioButton Content="5" GroupName="Players" Theme="{StaticResource {x:Type ToggleButton}}"/>
-                    <RadioButton Content="6" GroupName="Players" Theme="{StaticResource {x:Type ToggleButton}}"/>
-                </StackPanel>
-                
-                <TextBlock Grid.Row="1" Grid.Column="0" VerticalAlignment="Center" FontSize="16" Margin="0,40,0,0"
-                           Text="{Binding [Match.Type], Source={x:Static loc:LocalizationManager.Instance}}" />
-                <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Horizontal" Spacing="10" Margin="0,40,0,0">
-                    <RadioButton Content="{Binding [Match.TypeNormal], Source={x:Static loc:LocalizationManager.Instance}}" 
-                                 GroupName="Type" Theme="{StaticResource {x:Type ToggleButton}}" IsChecked="True" Width="100" HorizontalContentAlignment="Center"/>
-                    <RadioButton Content="{Binding [Match. TypeFast], Source={x:Static loc:LocalizationManager.Instance}}" 
-                                 GroupName="Type" Theme="{StaticResource {x:Type ToggleButton}}" Width="100" HorizontalContentAlignment="Center"/>
-                </StackPanel>
-                
-                <TextBlock Grid.Row="2" Grid.Column="0" VerticalAlignment="Center" FontSize="16" Margin="0,40,0,0" TextWrapping="Wrap"
-                           Text="{Binding [Match.Privacy], Source={x:Static loc:LocalizationManager.Instance}}" />
-                <StackPanel Grid.Row="2" Grid.Column="1" Orientation="Horizontal" Spacing="10" Margin="0,40,0,0">
-                    <RadioButton Content="{Binding [Match.PrivacyPublic], Source={x:Static loc:LocalizationManager.Instance}}" 
-                                 GroupName="Privacy" Theme="{StaticResource {x:Type ToggleButton}}" IsChecked="True" Width="100" HorizontalContentAlignment="Center"/>
-                    <RadioButton Content="{Binding [Match.PrivacyPrivate], Source={x:Static loc:LocalizationManager.Instance}}" 
-                                 GroupName="Privacy" Theme="{StaticResource {x:Type ToggleButton}}" Width="100" HorizontalContentAlignment="Center"/>
+        <Grid ColumnDefinitions="240, Auto, *">
+            
+            <Grid Grid.Column="0" RowDefinitions="Auto, *, Auto">
+                <Button Grid.Row="0"
+                        Background="Transparent"
+                        Foreground="{DynamicResource ColorTextSecondary}"
+                        FontSize="22"
+                        FontWeight="Bold"
+                        Padding="6"
+                        HorizontalAlignment="Left"
+                        Cursor="Hand"
+                        Content="&lt;"/>
+
+                <StackPanel Grid.Row="1" VerticalAlignment="Center" Spacing="16" Margin="0,0,25,0">
+                    <Button Height="50"
+                            FontSize="16"
+                            Content="{Binding [PlaySection.NewMatch], Source={x:Static loc:LocalizationManager.Instance}}"
+                            Command="{Binding ShowCreateSectionCommand}"
+                            Classes.primary-btn="{Binding IsCreatingSelected}"
+                            Classes.outline-btn="{Binding !IsCreatingSelected}"/>
+
+                    <Button Height="50"
+                            FontSize="16"
+                            Content="{Binding [PlaySection.JoinMatch], Source={x:Static loc:LocalizationManager.Instance}}"
+                            Command="{Binding ShowJoinSectionCommand}"
+                            Classes.primary-btn="{Binding !IsCreatingSelected}"
+                            Classes.outline-btn="{Binding IsCreatingSelected}"/>
                 </StackPanel>
             </Grid>
-            
-            <Button Content="{Binding [Match.Create], Source={x:Static loc:LocalizationManager.Instance}}" 
-                    FontSize="18" HorizontalAlignment="Right" Background="Transparent" BorderBrush="Black" BorderThickness="1" Padding="20,10" Margin="0,40,0,0"/>
-        </StackPanel>
-    </Grid>
+
+            <Border Grid.Column="1" 
+                    Width="1" 
+                    Background="{DynamicResource ColorBorder}" 
+                    Margin="10,15,35,15"/>
+
+            <ContentControl Grid.Column="2" 
+                            Content="{Binding CurrentSection}" 
+                            Margin="10,0,10,0"/>
+        </Grid>
+    </Border>
 </UserControl>

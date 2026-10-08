@@ -150,6 +150,132 @@ namespace Pesedjet.Client.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Cancelar.
+        /// </summary>
+        internal static string ForgotPassword_ButtonCancel {
+            get {
+                return ResourceManager.GetString("ForgotPassword.ButtonCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restablecer contraseña.
+        /// </summary>
+        internal static string ForgotPassword_ButtonReset {
+            get {
+                return ResourceManager.GetString("ForgotPassword.ButtonReset", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Enviar código.
+        /// </summary>
+        internal static string ForgotPassword_ButtonSendCode {
+            get {
+                return ResourceManager.GetString("ForgotPassword.ButtonSendCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Código de verificación.
+        /// </summary>
+        internal static string ForgotPassword_Code {
+            get {
+                return ResourceManager.GetString("ForgotPassword.Code", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirmar nueva contraseña.
+        /// </summary>
+        internal static string ForgotPassword_ConfirmPassword {
+            get {
+                return ResourceManager.GetString("ForgotPassword.ConfirmPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Correo electrónico.
+        /// </summary>
+        internal static string ForgotPassword_Email {
+            get {
+                return ResourceManager.GetString("ForgotPassword.Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El código de verificación debe contener exactamente 6 dígitos numéricos..
+        /// </summary>
+        internal static string ForgotPassword_Error_InvalidCode {
+            get {
+                return ResourceManager.GetString("ForgotPassword.Error.InvalidCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Por favor, ingresa un correo electrónico válido..
+        /// </summary>
+        internal static string ForgotPassword_Error_InvalidEmail {
+            get {
+                return ResourceManager.GetString("ForgotPassword.Error.InvalidEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to La contraseña debe tener al menos 8 caracteres, una mayúscula, un número y un carácter especial, y ambos campos deben coincidir..
+        /// </summary>
+        internal static string ForgotPassword_Error_InvalidPassword {
+            get {
+                return ResourceManager.GetString("ForgotPassword.Error.InvalidPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ingresa el correo electrónico asociado a tu cuenta para recibir un código de verificación..
+        /// </summary>
+        internal static string ForgotPassword_InstructionStep1 {
+            get {
+                return ResourceManager.GetString("ForgotPassword.InstructionStep1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ingresa el código de 6 dígitos enviado a tu correo y tu nueva contraseña..
+        /// </summary>
+        internal static string ForgotPassword_InstructionStep2 {
+            get {
+                return ResourceManager.GetString("ForgotPassword.InstructionStep2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nueva contraseña.
+        /// </summary>
+        internal static string ForgotPassword_NewPassword {
+            get {
+                return ResourceManager.GetString("ForgotPassword.NewPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tu contraseña ha sido actualizada exitosamente..
+        /// </summary>
+        internal static string ForgotPassword_SuccessMessage {
+            get {
+                return ResourceManager.GetString("ForgotPassword.SuccessMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Recuperar Contraseña.
+        /// </summary>
+        internal static string ForgotPassword_Title {
+            get {
+                return ResourceManager.GetString("ForgotPassword.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Aceptar.
         /// </summary>
         internal static string FriendsListSection_Accept {
@@ -236,6 +362,159 @@ namespace Pesedjet.Client.Resources {
         internal static string FriendsSection_NewFriend {
             get {
                 return ResourceManager.GetString("FriendsSection.NewFriend", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ingresa el código de invitación.
+        /// </summary>
+        internal static string JoinMatch_EnterCode {
+            get {
+                return ResourceManager.GetString("JoinMatch.EnterCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to La partida de esta sala ya ha comenzado y no admite nuevos jugadores..
+        /// </summary>
+        internal static string JoinMatch_Error_GameInProgress {
+            get {
+                return ResourceManager.GetString("JoinMatch.Error.GameInProgress", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Por favor ingrese un código de sala válido de 6 caracteres..
+        /// </summary>
+        internal static string JoinMatch_Error_InvalidCodeFormat {
+            get {
+                return ResourceManager.GetString("JoinMatch.Error.InvalidCodeFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to La sala seleccionada ha alcanzado su capacidad máxima..
+        /// </summary>
+        internal static string JoinMatch_Error_RoomFull {
+            get {
+                return ResourceManager.GetString("JoinMatch.Error.RoomFull", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No se encontró ninguna sala de juego asociada al código ingresado..
+        /// </summary>
+        internal static string JoinMatch_Error_RoomNotFound {
+            get {
+                return ResourceManager.GetString("JoinMatch.Error.RoomNotFound", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to No hay salas públicas disponibles en este momento..
+        /// </summary>
+        internal static string JoinMatch_NoPublicRooms {
+            get {
+                return ResourceManager.GetString("JoinMatch.NoPublicRooms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Código de Invitación.
+        /// </summary>
+        internal static string JoinMatch_TabCode {
+            get {
+                return ResourceManager.GetString("JoinMatch.TabCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Explorar Salas Públicas.
+        /// </summary>
+        internal static string JoinMatch_TabPublicRooms {
+            get {
+                return ResourceManager.GetString("JoinMatch.TabPublicRooms", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ver Perfil.
+        /// </summary>
+        internal static string Leaderboard_ActionProfile {
+            get {
+                return ResourceManager.GetString("Leaderboard.ActionProfile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Amuletos Obtenidos.
+        /// </summary>
+        internal static string Leaderboard_Amulets {
+            get {
+                return ResourceManager.GetString("Leaderboard.Amulets", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Aún no se registran puntuaciones en la categoría seleccionada..
+        /// </summary>
+        internal static string Leaderboard_Empty {
+            get {
+                return ResourceManager.GetString("Leaderboard.Empty", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Global.
+        /// </summary>
+        internal static string Leaderboard_FilterAll {
+            get {
+                return ResourceManager.GetString("Leaderboard.FilterAll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Solo Amigos.
+        /// </summary>
+        internal static string Leaderboard_FilterFriends {
+            get {
+                return ResourceManager.GetString("Leaderboard.FilterFriends", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Jugador.
+        /// </summary>
+        internal static string Leaderboard_Player {
+            get {
+                return ResourceManager.GetString("Leaderboard.Player", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Posición.
+        /// </summary>
+        internal static string Leaderboard_Rank {
+            get {
+                return ResourceManager.GetString("Leaderboard.Rank", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tabla de Clasificaciones.
+        /// </summary>
+        internal static string Leaderboard_Title {
+            get {
+                return ResourceManager.GetString("Leaderboard.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Partidas Ganadas.
+        /// </summary>
+        internal static string Leaderboard_Victories {
+            get {
+                return ResourceManager.GetString("Leaderboard.Victories", resourceCulture);
             }
         }
         
@@ -474,6 +753,339 @@ namespace Pesedjet.Client.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Configurar Partida.
+        /// </summary>
+        internal static string PlaySection_ConfigureMatch {
+            get {
+                return ResourceManager.GetString("PlaySection.ConfigureMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Crear sala.
+        /// </summary>
+        internal static string PlaySection_ConfirmCreate {
+            get {
+                return ResourceManager.GetString("PlaySection.ConfirmCreate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tipo de Partida:.
+        /// </summary>
+        internal static string PlaySection_GameType {
+            get {
+                return ResourceManager.GetString("PlaySection.GameType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rápida.
+        /// </summary>
+        internal static string PlaySection_GameTypeQuick {
+            get {
+                return ResourceManager.GetString("PlaySection.GameTypeQuick", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Normal.
+        /// </summary>
+        internal static string PlaySection_GameTypeStandard {
+            get {
+                return ResourceManager.GetString("PlaySection.GameTypeStandard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Unirse a sala.
+        /// </summary>
+        internal static string PlaySection_JoinMatch {
+            get {
+                return ResourceManager.GetString("PlaySection.JoinMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Crear nueva sala.
+        /// </summary>
+        internal static string PlaySection_NewMatch {
+            get {
+                return ResourceManager.GetString("PlaySection.NewMatch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cantidad de jugadores:.
+        /// </summary>
+        internal static string PlaySection_PlayerCount {
+            get {
+                return ResourceManager.GetString("PlaySection.PlayerCount", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Privada.
+        /// </summary>
+        internal static string PlaySection_PrivateScope {
+            get {
+                return ResourceManager.GetString("PlaySection.PrivateScope", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pública.
+        /// </summary>
+        internal static string PlaySection_PublicScope {
+            get {
+                return ResourceManager.GetString("PlaySection.PublicScope", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Alcance de la sala:.
+        /// </summary>
+        internal static string PlaySection_RoomPrivacy {
+            get {
+                return ResourceManager.GetString("PlaySection.RoomPrivacy", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fecha de nacimiento.
+        /// </summary>
+        internal static string Profile_BirthDate {
+            get {
+                return ResourceManager.GetString("Profile.BirthDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Editar Datos.
+        /// </summary>
+        internal static string Profile_ButtonEdit {
+            get {
+                return ResourceManager.GetString("Profile.ButtonEdit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Correo electrónico.
+        /// </summary>
+        internal static string Profile_Email {
+            get {
+                return ResourceManager.GetString("Profile.Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nombre Completo.
+        /// </summary>
+        internal static string Profile_FullName {
+            get {
+                return ResourceManager.GetString("Profile.FullName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nombre de usuario.
+        /// </summary>
+        internal static string Profile_Gametag {
+            get {
+                return ResourceManager.GetString("Profile.Gametag", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nivel.
+        /// </summary>
+        internal static string Profile_Level {
+            get {
+                return ResourceManager.GetString("Profile.Level", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Partidas jugadas.
+        /// </summary>
+        internal static string Profile_MatchesPlayed {
+            get {
+                return ResourceManager.GetString("Profile.MatchesPlayed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Partidas ganadas.
+        /// </summary>
+        internal static string Profile_MatchesWon {
+            get {
+                return ResourceManager.GetString("Profile.MatchesWon", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Rango.
+        /// </summary>
+        internal static string Profile_Rank {
+            get {
+                return ResourceManager.GetString("Profile.Rank", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Estadísticas de Juego.
+        /// </summary>
+        internal static string Profile_StatsTitle {
+            get {
+                return ResourceManager.GetString("Profile.StatsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Mi Perfil.
+        /// </summary>
+        internal static string Profile_Title {
+            get {
+                return ResourceManager.GetString("Profile.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tasa de victoria.
+        /// </summary>
+        internal static string Profile_WinRate {
+            get {
+                return ResourceManager.GetString("Profile.WinRate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Fecha de nacimiento.
+        /// </summary>
+        internal static string Register_BirthDate {
+            get {
+                return ResourceManager.GetString("Register.BirthDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cancelar.
+        /// </summary>
+        internal static string Register_ButtonCancel {
+            get {
+                return ResourceManager.GetString("Register.ButtonCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Registrar.
+        /// </summary>
+        internal static string Register_ButtonSubmit {
+            get {
+                return ResourceManager.GetString("Register.ButtonSubmit", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Confirmar contraseña.
+        /// </summary>
+        internal static string Register_ConfirmPassword {
+            get {
+                return ResourceManager.GetString("Register.ConfirmPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Correo electrónico.
+        /// </summary>
+        internal static string Register_Email {
+            get {
+                return ResourceManager.GetString("Register.Email", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El correo electrónico proporcionado ya se encuentra asociado a una cuenta registrada..
+        /// </summary>
+        internal static string Register_Error_EmailInUse {
+            get {
+                return ResourceManager.GetString("Register.Error.EmailInUse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El nombre de usuario no está disponible. Por favor, elija uno diferente..
+        /// </summary>
+        internal static string Register_Error_GametagInUse {
+            get {
+                return ResourceManager.GetString("Register.Error.GametagInUse", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to La contraseña debe tener al menos 8 caracteres, una mayúscula, un número y un carácter especial, y ambos campos deben coincidir..
+        /// </summary>
+        internal static string Register_Error_InvalidPassword {
+            get {
+                return ResourceManager.GetString("Register.Error.InvalidPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Por favor, complete todos los campos obligatorios con el formato correspondiente..
+        /// </summary>
+        internal static string Register_Error_RequiredFields {
+            get {
+                return ResourceManager.GetString("Register.Error.RequiredFields", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El registro únicamente está permitido para personas mayores o iguales a 12 años de edad..
+        /// </summary>
+        internal static string Register_Error_Underage {
+            get {
+                return ResourceManager.GetString("Register.Error.Underage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nombre completo.
+        /// </summary>
+        internal static string Register_FullName {
+            get {
+                return ResourceManager.GetString("Register.FullName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Nombre de usuario (Gametag).
+        /// </summary>
+        internal static string Register_Gametag {
+            get {
+                return ResourceManager.GetString("Register.Gametag", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Contraseña.
+        /// </summary>
+        internal static string Register_Password {
+            get {
+                return ResourceManager.GetString("Register.Password", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Crear Cuenta.
+        /// </summary>
+        internal static string Register_Title {
+            get {
+                return ResourceManager.GetString("Register.Title", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Idioma.
         /// </summary>
         internal static string Settings_Language {
@@ -512,6 +1124,86 @@ namespace Pesedjet.Client.Resources {
         internal static string AccessMenu_LoginSuccess {
             get {
                 return ResourceManager.GetString("AccessMenu.LoginSuccess", resourceCulture);
+            }
+        }
+        /// <summary>
+        ///   Looks up a localized string similar to Cancelar.
+        /// </summary>
+        internal static string TwoFactor_ButtonCancel {
+            get {
+                return ResourceManager.GetString("TwoFactor.ButtonCancel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Reenviar código.
+        /// </summary>
+        internal static string TwoFactor_ButtonResend {
+            get {
+                return ResourceManager.GetString("TwoFactor.ButtonResend", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Verificar.
+        /// </summary>
+        internal static string TwoFactor_ButtonVerify {
+            get {
+                return ResourceManager.GetString("TwoFactor.ButtonVerify", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El código ha expirado. Por favor, solicita uno nuevo..
+        /// </summary>
+        internal static string TwoFactor_Error_ExpiredCode {
+            get {
+                return ResourceManager.GetString("TwoFactor.Error.ExpiredCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El código ingresado es incorrecto. Inténtalo de nuevo..
+        /// </summary>
+        internal static string TwoFactor_Error_IncorrectCode {
+            get {
+                return ResourceManager.GetString("TwoFactor.Error.IncorrectCode", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to El código de verificación debe contener exactamente 6 dígitos numéricos..
+        /// </summary>
+        internal static string TwoFactor_Error_InvalidCodeLength {
+            get {
+                return ResourceManager.GetString("TwoFactor.Error.InvalidCodeLength", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Ingresa el código de 6 dígitos enviado a tu correo electrónico. El código expira en:.
+        /// </summary>
+        internal static string TwoFactor_Instruction {
+            get {
+                return ResourceManager.GetString("TwoFactor.Instruction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Se ha enviado un nuevo código de verificación a tu correo..
+        /// </summary>
+        internal static string TwoFactor_ResendSuccess {
+            get {
+                return ResourceManager.GetString("TwoFactor.ResendSuccess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Verificación de Dos Factores.
+        /// </summary>
+        internal static string TwoFactor_Title {
+            get {
+                return ResourceManager.GetString("TwoFactor.Title", resourceCulture);
             }
         }
     }

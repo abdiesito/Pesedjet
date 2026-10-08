@@ -12,6 +12,6 @@
         <FluentTheme />
         <StyleInclude Source="avares://Pesedjet.Client/Styles/AppStyles.axaml" />
         <StyleInclude Source="avares://Pesedjet.Client/Styles/SandBackgroundStyle.axaml" />
-    </Application.Styles> 
-    
+        <StyleInclude Source="avares://Pesedjet.Client/Styles/ControlsStyles.axaml" />
+    </Application.Styles>        
 </Application>
