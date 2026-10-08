@@ -6,17 +6,17 @@ namespace Pesedjet.Client.ViewModels;
 
 public partial class MenuViewModel : ViewModelBase
 {
-    private readonly INavigationService _navigationService;
+    private readonly INavigator _navigator;
     
-    public MenuViewModel(INavigationService navigationService)
+    public MenuViewModel(INavigator navigator)
     {
-        _navigationService = navigationService;
+        _navigator = navigator;
     }
     
     [RelayCommand]
     private void NavigateToFriends()
     {
-        _navigationService.NavigateTo(new FriendsViewModel(_navigationService));
+        _navigator.NavigateTo(new FriendsViewModel(_navigator));
     }
     
     [ObservableProperty]

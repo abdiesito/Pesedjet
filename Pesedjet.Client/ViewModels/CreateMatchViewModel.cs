@@ -5,16 +5,16 @@ namespace Pesedjet.Client.ViewModels;
 
 public partial class CreateMatchViewModel : ViewModelBase
 {
-    private readonly INavigationService _navigationService;
+    private readonly INavigator _navigator;
 
-    public CreateMatchViewModel(INavigationService navigationService)
+    public CreateMatchViewModel(INavigator navigator)
     {
-        _navigationService = navigationService;
+        _navigator = navigator;
     }
  
     [RelayCommand]
     private void GoBack()
     {
-        _navigationService.GoBack();
+        _navigator.GoBack();
     }
 }

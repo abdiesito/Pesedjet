@@ -3,7 +3,7 @@
 xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="950" d:DesignHeight="600"
-             xmlns:loc="using:Pesedjet.Client.Services"
+             xmlns:loc="using:Pesedjet.Client.Utilities"
              xmlns:vm="using:Pesedjet.Client.ViewModels"
              x:DataType="vm:MatchViewModel"
              x:CompileBindings="False"

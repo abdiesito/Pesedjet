@@ -1,7 +1,7 @@
 ﻿using System.Text.RegularExpressions;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Pesedjet.Client.Services;
+using Pesedjet.Client.Utilities;
 
 namespace Pesedjet.Client.ViewModels;
 
@@ -61,7 +61,7 @@ public partial class ForgotPasswordViewModel : ViewModelBase
             return;
         }
 
-        // TODO: Call backend service via proxy to send SMTP verification code.
+        // TODO: Call backend service 
         IsCodeSent = true;
     }
 

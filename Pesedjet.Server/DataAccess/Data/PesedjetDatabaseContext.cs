@@ -19,7 +19,7 @@ public class PesedjetDatabaseContext : DbContext
         modelBuilder.Entity<Profile>().ToTable("PROFILE");
         modelBuilder.Entity<TwoFactorAuthenticator>().ToTable("TWO_FACTOR_AUTHENTICATOR");
         
-        //TO DO: lambdas sí,pero descriptivos: agregar a estandar 
+        //TODO: add to standar the lambda use (the lambda variable must be descriptive) 
         modelBuilder.Entity<Player>().HasIndex(p => p.Username).IsUnique();
         
         modelBuilder.Entity<Player>().HasIndex(p => p.Email).IsUnique();

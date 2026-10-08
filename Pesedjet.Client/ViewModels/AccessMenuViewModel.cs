@@ -8,11 +8,11 @@ namespace Pesedjet.Client.ViewModels;
 public partial class AccessMenuViewModel : ViewModelBase
 {
     private readonly LocalPlayerService _playerService = new();
-    private readonly INavigationService _navigationService;
+    private readonly INavigator _navigator;
 
-    public AccessMenuViewModel(INavigationService navigationService)
+    public AccessMenuViewModel(INavigator navigator)
     {
-        _navigationService = navigationService;
+        _navigator = navigator;
     }
 
     [ObservableProperty] 
@@ -30,7 +30,7 @@ public partial class AccessMenuViewModel : ViewModelBase
     [RelayCommand]
     public async Task LoginAsync()
     {
-        StatusMessage = "Conectando a SQL Server...";
+        StatusMessage = "Conectando ...";
 
         try
         {
@@ -39,7 +39,7 @@ public partial class AccessMenuViewModel : ViewModelBase
             if (player != null && player.HashedPassword == Password)
             {
                 StatusMessage = $"¡Acceso concedido, {player.Username}! Nivel/Exp: {player.Profile?.TotalExp ?? 0}";
-                // TODO: Navegar al Menú Principal
+                // TODO: Navigate to MenuView
             }
             else
             {
@@ -55,7 +55,7 @@ public partial class AccessMenuViewModel : ViewModelBase
     [RelayCommand]
     private void NavigateToPlayAsGuest()
     {
-        _navigationService.NavigateTo(new CreateMatchViewModel(_navigationService));
+        _navigator.NavigateTo(new CreateMatchViewModel(_navigator));
     }
     
 }

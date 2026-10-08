@@ -1,8 +1,10 @@
-﻿using System;
-using System.Text.RegularExpressions;
+﻿using System.Text.RegularExpressions;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using Pesedjet.Client.Services;
+using Pesedjet.Client.Models;
+using Pesedjet.Client.Utilities;
+using Pesedjet.Client.Utilities.Navigation;
+using Pesedjet.Server.Models;
 
 namespace Pesedjet.Client.ViewModels;
 
@@ -13,6 +15,9 @@ public partial class RegisterViewModel : ViewModelBase
     private const int MinimumPasswordLength = 8;
     private const int MinimumRequiredAge = 12;
 
+    private readonly LocalPlayerService _playerService = new();
+    private readonly INavigator _navigator;
+
     [ObservableProperty]
     private string _fullName = string.Empty;
 
@@ -21,6 +26,7 @@ public partial class RegisterViewModel : ViewModelBase
 
     [ObservableProperty]
     private DateTimeOffset? _birthDate = DateTimeOffset.Now.AddYears(-MinimumRequiredAge);
+    
     public DateTimeOffset MaximumAllowedBirthDate => DateTimeOffset.Now.AddYears(-MinimumRequiredAge);
 
     [ObservableProperty]
@@ -37,8 +43,7 @@ public partial class RegisterViewModel : ViewModelBase
 
     [ObservableProperty]
     private bool _hasError;
-
-    // Visual feedback flags for invalid field borders
+    
     [ObservableProperty]
     private bool _isFullNameInvalid;
 
@@ -57,38 +62,47 @@ public partial class RegisterViewModel : ViewModelBase
     [ObservableProperty]
     private bool _isConfirmPasswordInvalid;
 
-    public RegisterViewModel()
+    public RegisterViewModel(INavigator navigator)
     {
+        _navigator = navigator;
     }
 
     [RelayCommand]
-    public void Register()
+    public async Task RegisterAsync()
     {
         ClearValidationState();
 
-        if (!ValidatePresenceAndFormats())
+        if (!ValidatePresenceAndFormats() || !ValidateAge() || !ValidatePasswordComplexityAndMatch())
         {
             return;
         }
 
-        if (!ValidateAge())
+        var newPlayer = new Player
         {
-            return;
-        }
+            FullName = FullName.Trim(),
+            Username = Gametag.Trim(),
+            BirthDate = BirthDate!.Value.DateTime,
+            Email = Email.Trim(),
+            HashedPassword = SecurityUtilities.HashPassword(Password)
+        };
 
-        if (!ValidatePasswordComplexityAndMatch())
+        var isRegistered = await _playerService.RegisterPlayerAsync(newPlayer);
+
+        if (isRegistered)
         {
-            return;
+            _navigator.NavigateTo(new AccessMenuViewModel(_navigator));
         }
-
-        // TODO: Invoke remote service to send 2FA SMTP email and launch GUI-VerificacionDobleFactor modal.
+        else
+        {
+            ShowError(LocalizationManager.Instance["Register.Error.UserAlreadyExists"]);
+        }
     }
 
     [RelayCommand]
     public void Cancel()
     {
         ClearForm();
-        // TODO: Navigate back to GUI-IniciarSesion view.
+        _navigator.NavigateTo(new AccessMenuViewModel(_navigator));
     }
 
     private bool ValidatePresenceAndFormats()

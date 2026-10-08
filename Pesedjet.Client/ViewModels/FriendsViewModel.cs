@@ -6,16 +6,16 @@ namespace Pesedjet.Client.ViewModels;
 public partial class FriendsViewModel : ViewModelBase
 {
     
-    private readonly INavigationService _navigationService;
+    private readonly INavigator _navigator;
 
-    public FriendsViewModel(INavigationService navigationService)
+    public FriendsViewModel(INavigator navigator)
     {
-        _navigationService = navigationService;
+        _navigator = navigator;
     }
     
     [RelayCommand]
     private void GoBack()
     {
-        _navigationService.GoBack();
+        _navigator.GoBack();
     }
 }

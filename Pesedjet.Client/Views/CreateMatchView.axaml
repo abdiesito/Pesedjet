@@ -1,7 +1,7 @@
 ﻿<UserControl xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:vm="using:Pesedjet.Client.ViewModels"
-             xmlns:loc="using:Pesedjet.Client.Services"
+             xmlns:loc="using:Pesedjet.Client.Utilities"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="650" d:DesignHeight="500"
@@ -21,39 +21,8 @@
             Padding="35">
 
         <Grid ColumnDefinitions="240, Auto, *">
-            <Grid Grid.Column="0" RowDefinitions="Auto, *, Auto">
-                <Button Grid.Row="0"
-                        Background="Transparent"
-                        Command="{Binding GoBackCommand}"
-                        Foreground="{DynamicResource ColorTextSecondary}"
-                        FontSize="22"
-                        FontWeight="Bold"
-                        Padding="6"
-                        HorizontalAlignment="Left"
-                        Cursor="Hand">
-                    &lt;
-                </Button>
-
-    <Grid RowDefinitions="Auto, *, Auto">
-        <TextBlock Grid.Row="0"
-                   Text="{Binding [PlaySection.ConfigureMatch], Source={x:Static loc:LocalizationManager.Instance}}"
-                   Foreground="{DynamicResource ColorTextPrimary}"
-                   FontSize="{DynamicResource FontSizeTitle}"
-                   FontWeight="Bold"
-                   Margin="0,0,0,28"/>
-
-        <StackPanel Grid.Row="1" Spacing="24" VerticalAlignment="Top">
             
-            <StackPanel Spacing="10">
-        <Border Background="{DynamicResource ColorSurface}"
-            BorderBrush="{DynamicResource ColorBorder}"
-            BorderThickness="1"
-            CornerRadius="{DynamicResource RadiusCard}"
-            Margin="40"
-            Padding="35">
-
-        <Grid ColumnDefinitions="240, Auto, *">
-            
+            <!-- Columna Izquierda: Botón de Regreso -->
             <Grid Grid.Column="0" RowDefinitions="Auto, *, Auto">
                 <Button Grid.Row="0"
                         Background="Transparent"
@@ -68,11 +37,13 @@
                 </Button>
             </Grid>
             
+            <!-- Separador -->
             <Border Grid.Column="1"
                     Width="1"
                     Background="{DynamicResource ColorBorder}"
                     Margin="10,15,35,15"/>
             
+            <!-- Columna Derecha: Formulario -->
             <Grid Grid.Column="2" RowDefinitions="Auto, *, Auto" Margin="10,0,10,0">
                 <TextBlock Grid.Row="0"
                            Text="{Binding [PlaySection.ConfigureMatch], Source={x:Static loc:LocalizationManager.Instance}}"
@@ -83,6 +54,7 @@
 
                 <StackPanel Grid.Row="1" Spacing="26" VerticalAlignment="Top">
                     
+                    <!-- 1. Cantidad de Jugadores -->
                     <Grid ColumnDefinitions="140, *">
                         <TextBlock Grid.Column="0"
                                    Text="{Binding [PlaySection.PlayerCount], Source={x:Static loc:LocalizationManager.Instance}}"
@@ -100,6 +72,7 @@
                         </StackPanel>
                     </Grid>
 
+                    <!-- 2. Tipo de Partida -->
                     <Grid ColumnDefinitions="140, *">
                         <TextBlock Grid.Column="0"
                                    Text="{Binding [PlaySection.GameType], Source={x:Static loc:LocalizationManager.Instance}}"
@@ -120,6 +93,7 @@
                         </StackPanel>
                     </Grid>
                     
+                    <!-- 3. Alcance / Privacidad -->
                     <Grid ColumnDefinitions="140, *">
                         <TextBlock Grid.Column="0"
                                    Text="{Binding [PlaySection.RoomPrivacy], Source={x:Static loc:LocalizationManager.Instance}}"
@@ -152,5 +126,4 @@
             </Grid>
         </Grid>
     </Border>
-
 </UserControl>

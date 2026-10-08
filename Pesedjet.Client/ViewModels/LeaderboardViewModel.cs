@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
+﻿using System.Collections.ObjectModel;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Pesedjet.Client.Models;
@@ -63,15 +61,13 @@ public partial class LeaderboardViewModel : ViewModelBase
         TopRankings.Clear();
 
         List<LeaderboardEntryItem> rawEntries = GetSampleEntries();
-
-        // Apply filtering logic
+        
         IEnumerable<LeaderboardEntryItem> filteredEntries = rawEntries;
         if (ShowFriendsOnly)
         {
             filteredEntries = rawEntries.Where(e => e.IsFriend || e.IsCurrentPlayer);
         }
-
-        // Apply sorting criteria: Victories DESC, Amulets DESC
+        
         List<LeaderboardEntryItem> sortedEntries = filteredEntries
             .OrderByDescending(e => e.VictoriesCount)
             .ThenByDescending(e => e.AmuletsCount)

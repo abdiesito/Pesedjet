@@ -4,7 +4,7 @@ using Pesedjet.Client.ViewModels;
 
 namespace Pesedjet.Client.Utilities.Navigation;
 
-public partial class NavigationService : ObservableObject, INavigationService
+public partial class Navigator : ObservableObject, INavigator
 {
     private readonly Stack<ViewModelBase> _navigationStack = new();
 

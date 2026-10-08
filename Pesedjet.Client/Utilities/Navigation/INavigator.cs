@@ -2,7 +2,7 @@ using Pesedjet.Client.ViewModels;
 
 namespace Pesedjet.Client.Utilities.Navigation;
 
-public interface INavigationService
+public interface INavigator
 {
     ViewModelBase CurrentViewModel { get; }
     bool CanGoBack { get; }
